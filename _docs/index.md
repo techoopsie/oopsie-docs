@@ -1,6 +1,6 @@
 ---
 title: Welcome
-permalink: /docs/home/
+permalink: /docs/
 redirect_from: /docs/index.html
 ---
 
