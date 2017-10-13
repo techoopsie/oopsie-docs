@@ -16,6 +16,10 @@
   - api-keys
   - users
 
+- title: Authorization
+  docs:
+  - what-is-auth
+
 - title: Api
   docs:
   - how-to
