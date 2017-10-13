@@ -14,12 +14,18 @@ An application is usually modeled with objects, e.g. a person object or an emplo
 
 **3.** In the dialog enter an name for your resource and click *OK*. In the dialog an *Advanced* option is available. This option has only one choice at the moment but in the near future it will be possible to choose different types of resources for specific puposes, e.g. timebased resource types for sensor data.
 
-**4.** In your *application Model* view your resource should appear and you are no able to add attributes so you can fill your resource with data.
+**4.** In your *application Model* view your resource should appear and you are now able to add attributes so you can fill your resource with data.
 
 <img src="/img/resource-panel.png" width="650">
 
 ------
 #### The Resource Panel
+
+In the resource panel you model your *Resource*. Your resource will hold informaion for each resource entity and you add attributes for specific data, e.g. name, age etc. In the section [Attributes](/docs/attributes) you will learn more about attributes and how to add them to your resource.
+
+You can also create views of your resource. making it easy to query the resource using other attribute than the defult eid mentioned in the first chapter of this document. In the section [Views](/docs/views) you will learn more about views and how to create them.
+
+In the section [Resource Auth](/docs/res-auth) you will learn more about resoruce autorization and how to manage it for your resource.
 
 ##### Advanced
 
