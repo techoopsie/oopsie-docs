@@ -1,0 +1,35 @@
+- title: Getting Started
+  docs:
+  - home
+  - quickstart
+  - overview
+
+- title: Applications
+  docs:
+  - what-is-an-application
+  - resources
+  - attributes
+  - views
+
+- title: Site
+  docs:
+  - api-keys
+  - users
+
+- title: Api
+  docs:
+  - how-to
+
+- title: SDKs
+  docs:
+  - javascript-sdk
+  - java-sdk
+
+- title: Examples
+  docs:
+  - blog
+  - sensor
+
+- title: Misc
+  docs:
+  - faq
