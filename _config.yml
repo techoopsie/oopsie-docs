@@ -4,7 +4,7 @@ email: info@oopsie.io
 description: >
   Oopsie documentation.
 
-baseurl: "/docs" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://docs.techoopsie.com # the base hostname & protocol for your site
 git_address: https://github.com/techoopsie/oopsie-docs
 git_edit_address: https://github.com/techoopsie/oopsie-docs
