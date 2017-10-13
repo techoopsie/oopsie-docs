@@ -3,7 +3,7 @@ title: What is an Application?
 permalink: /docs/what-is-an-application/
 ---
 
-An *Application Model* acts like a template and holds a number of resources to store data. An applicaiton model can be released for later use on a Site.
+An *Application Model* acts like a template and holds a number of resources to store data. An application model can be released for later use on a Site.
 
 An Application contains:
 
@@ -29,9 +29,9 @@ An Application contains:
 
 **2.** Click the *Create Application* button.
 
-**3.** Enter a name for your application and choose an [Authorization Model](/docs/what-is-auth). Authorization is optional but we strongly recommend choosing one since your application will be totally open for anyone. If no Authorization Model exist then  you can create one using one of the two buttons. When ready click *OK* to create your application.
+**3.** Enter a name for your application and choose an [Authorization Model](/docs/what-is-auth). Authorization is optional but we strongly recommend choosing one since your application will be totally open for anyone if none is chosen. If no Authorization Model exist then  you can create one using one of the two buttons. When ready click *OK* to create your application.
 
-**4.** Now your browser should load the Application Models view and your application should be in the list of applications. By clicking on the row you will navigate to the applicaiton view. You can also delete the application if you aren't satisfied with it.
+**4.** Now your Application Model will appear in the list of applications. By clicking on the row you will navigate to the application view. You can also delete the application if you aren't satisfied with it.
 
 ### Create a Resource
 ------
@@ -43,16 +43,14 @@ To create a resource for your application model head over to the [Resource Secti
 ### Create a release of your Application
 ------
 
-When you are done modelling your Application you should tag it (create a release) that you can use on a Site.
+When you are done modeling your Application Model you should tag it (create a release), doing so will make it available for sites.
 
-![Create release of Applic.ation](/img/create-release2.png "Create release of Application")
+<img src="/img/create-release2.png" width="650">
 
 ### The API / Docs
 ------
-
-While you are modelling your Application you can always look how you will use your Application later on when it is Deployed on a Site. 
+If you decide to use the site REST api to connect your client to your OOPSIE site then you can always look how you will use your Application later on when it is deployed on a site. 
 
 The documentation is generated using Swagger.
 
-
-![Documentation of Application](/img/docs-app.png "Documentation of Application")
+<img src="/img/docs-app.png" width="650">
