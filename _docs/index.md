@@ -4,7 +4,7 @@ permalink: /docs/
 redirect_from: /docs/index.html
 ---
 
-The whole idea of OOPSIE is to make it easy for you to create your ideas and be ready for the big world without all the hassle of maintaining a complex server infratructure, OOPSIE will do that for you out-of-the-box. It doesn't matter if you are gonna create a small personal application or if you want to push "Big Data" from your enterprise systems for later analysis. With a few drags and clicks you can create full-fledged scalable applications and have it running within minutes. What is scalable? Well, imagine you create an app that over a night goes totally viral ands needs to handle tens of thousands of users and their server requests, how would you handle that? Don't, OOPSIE will do it for you!
+The whole idea of OOPSIE is to make your awesome idea come true. Make it easy for you to create your application and be ready for the big world without all the hassle of maintaining a complex server infratructure. OOPSIE will do that for you, out-of-the-box! It doesn't matter if you are gonna create a small personal application or if you want to push "Big Data" from your enterprise systems for later analysis. With a few drags and clicks you can create full-fledged scalable applications and have it running within minutes. What is scalable? Well, imagine you create an app that over a night goes totally viral ands needs to handle tens of thousands of users and their server requests, how would you hande that? Don't, OOPSIE will do it for you!
 
 Do you really need:
  - To code huge and complex backends? 
