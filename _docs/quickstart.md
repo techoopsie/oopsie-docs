@@ -5,18 +5,18 @@ permalink: /docs/quickstart/
 
 >Estimated time: 15 - 30m
 
-This guide will show you how to create and deploy your first Site with Oopsie within minutes. We will go step by step until you have your Site running in our Sandbox environment.
+This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running in our Sandbox environment.
 
 The result of this guide will be a deployed Site ( *TodoSite* ) that has an Application ( *TodoApp* ) with one Resource ( *Todo* ) that has two Attributes ( *name*, *done* ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet) 
 
-Altough Oopsie is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that wants to have the possibility to scale from 1 request a day to 100k requests per second. Why should you have to care about big and complex backends instead of working on your idea?
+Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?
 
 The place that all the modelling and deployment of your site takes place is in our [Dashboard](https://dashboard.oopsie.io).
 
 ### Prerequisits:
 ------
 
-- Oopsie account ( Don't have one? Create one at [oopsie.io](https://oopsie.io/create-account))
+- OOPSIE account ( Don't have one? Create one at [oopsie.io](https://oopsie.io/create-account))
 - Internet access ( which you obviously have? )
 
 That's it! Isn't it great!?
