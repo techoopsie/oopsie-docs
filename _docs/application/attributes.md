@@ -4,10 +4,9 @@ permalink: /docs/attributes/
 ---
 
 An Attribute is basically data you want to store for later use.
-If you are technical you may think of an Attribute as a column in a Database Table.
+If you are system engineer you may think of an Attribute as a column in a Database Table.
 
-
-![Attribute](/img/attribute.png "Attribute")
+<img src="/img/attribute.png" width="350">
 
 
 It contains:
@@ -19,55 +18,55 @@ It contains:
 
 The different types that currently exists are:
 
-- boolean
-- time
-- date
-- timestamp
-- decimal
-- big integer
-- integer
-- uuid
-- timeuuid
-- relation
-- set
-- list
-- map
-- tuple
+- Boolean
+- Text
+- Timestamp
+- Decimal
+- Biginteger
+- Integer
+- UUID
+- Relation
+- Set
+- List
+- Map
 
 
+#### Validations
+The text type has a two extra fields *min* and *max*. With these fields you can add validations of text length. Furthermore, the collection types Set, List and Map has a *max* field for validating the max size of objects allowed to store in these collections.
 
 #### Partition key
-------
 
-The Partition Key is responsible for data distribution across your nodes. This is nothing you have to worry about. One thing to keep in mind is that it might speed up your results if you have a well thought partition key.
+The Partition Key is an advanced feature responsible for data distribution across nodes in the OOPSIE infrastructure. For every resource OOPSIE calculates how many entities it can store per partition. THis means that if you know that your data will grow infinite then you *MUST* add a partition key so your data can be spread out on several paritions an be able to handle more entities. The amount of entities that can be stores is:
+```
+resource max entities * amount of resoruce partitions
+```
+So defining a partition key can be extremly useful for data that grows infinite. The OOPSIE Site API will throw an error when max entities is reached for a partition. Below we list some things to think of when using partition keys:
 
-> **NOTE:** If you have a Partition Key it has to be included everytime you want to retrieve data. Use it if you are sure you will always get your data by a specific Attribute.
+- If your data will grow infinite add a partition key to your resoruce.
+- If you define a partition key then it has to be included in the query everytime you want to retrieve data.
 
-> **NOTE:** If you are not an advanced user it might be easier to just skip setting a Partition key.
+An example that stores persons ...
 
-If you specify one of these it is good to think about how many of the same you will have. It will be slower if you reach a specific limit of a specific partition key.
-The dashboard will warn you if you will be able to have less then 300k entities per Partition.
+- city
+- lastName
+- firstName
 
-For eg. if you have a Resource with the Attributes:
+... and city is used as a Partition Key.
 
-- firstname
-- lastname
-- civicNo
-
-and firstname is used as a Partition Key.
-
-Your data will be partitioned by firstname and you will not be able to have 1 billion entities that has the same firstname.
+Your data will be partitioned by city and you will not be able to have several million persons (entities) that live in same city.
 
 The entities 
 
 ```json
 [
     { 
-        "firstname": "Samuel",
-        "lastname": "Jacksson"
+        "city": "Växjö",
+        "firstName": "Samuel",
+        "lastName": "Jackson"
     }, {
-        "firstname": "Samuel",
-        "lastname": "Andersson"
+        "city": "Växjö",
+        "firstName": "Samuel",
+        "lastName": "Andersson"
     }
 ]
 ```
@@ -76,10 +75,12 @@ will be stored in the same partition while the entities
 ```json
 [
     { 
-        "firstname": "Sam",
-        "lastname": "Jacksson"
+        "city": "Los Angeles",
+        "firstName": "Samuel",
+        "lastname": "Jackson"
     }, {
-        "firstname": "Samuel",
+        "city": "Växjö",
+        "firstName": "Samuel",
         "lastname": "Andersson"
     }
 ]
@@ -91,7 +92,9 @@ will **NOT** be stored in the same partition.
 #### Clustering key
 ------
 
-The Clustering Key is responsible for data sorting within the partition. It is possible to use the Attribute that is a Clustering Key when you are quering your data.
+The Clustering Key is responsible for data sorting within the partition. I.e. when fetching data it will be returned according to the clustering key attributes in the resource. In queries it is possible to "filter" data using clustering keys, just like partition keys, but clustering keys are optional in queries. But if they are present then they have to be in order as declared in the queried resource. An example:
+
+If the person resource mentioned in the partition key section above had lastName as clustering key 1 and firstName as clustering key 2 then it is not possible to query with firstName and omit lastName, but lastName can be queried and omit firstName. To accomplish a query by firstName only then you need to create a [view](/docs/views) of the resource.
 
 Clustering Key can be sorted by:
 
