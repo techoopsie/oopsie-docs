@@ -4,8 +4,8 @@
     
     
     {
-      "title": "Welcome",
-      "url": "/docs/home/"
+      "title": "",
+      "url": ""
 
     },
   
@@ -58,6 +58,14 @@
       "title": "Views",
       "url": "/docs/views/"
 
+    },
+  
+    
+    
+    {
+      "title": "Resource Auth",
+      "url": "/docs/res-auth/"
+
     }
   
   ,
@@ -76,6 +84,17 @@
     {
       "title": "Users",
       "url": "/docs/users/"
+
+    }
+  
+  ,
+
+  
+    
+    
+    {
+      "title": "What is Authorization?",
+      "url": "/docs/what-is-auth/"
 
     }
   

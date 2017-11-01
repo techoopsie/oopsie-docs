@@ -10,11 +10,16 @@
   - resources
   - attributes
   - views
+  - res-auth
 
 - title: Site
   docs:
   - api-keys
   - users
+
+- title: Authorization
+  docs:
+  - what-is-auth
 
 - title: Api
   docs:

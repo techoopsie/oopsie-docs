@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Resources</title>
-    <meta name="description" content="A Resources contains a number of Attributes, Views and (if the Application has an Authorization Model) Auth settings.">
+    <meta name="description" content="An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e...">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -18,15 +18,15 @@
 <title>Resources | Oopsie Doc</title>
 <meta property="og:title" content="Resources" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A Resources contains a number of Attributes, Views and (if the Application has an Authorization Model) Auth settings." />
-<meta property="og:description" content="A Resources contains a number of Attributes, Views and (if the Application has an Authorization Model) Auth settings." />
+<meta name="description" content="An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e.g. a person object entity could be a person with name Dalai Lama. In OOPSIE these objects are called a Resource and the information resides in Attributes such as name. A Resources may contain any number of Attributes of various types. All resource entities also gets a unique id (eid) and specific resource entities can be queried using this eid. To create more advanced queries a resource can be modeled with Views to get resource results in a specific manner. To secure the access of resources each resoruce may have its Authorization altered to control specific rights using *Permissions”." />
+<meta property="og:description" content="An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e.g. a person object entity could be a person with name Dalai Lama. In OOPSIE these objects are called a Resource and the information resides in Attributes such as name. A Resources may contain any number of Attributes of various types. All resource entities also gets a unique id (eid) and specific resource entities can be queried using this eid. To create more advanced queries a resource can be modeled with Views to get resource results in a specific manner. To secure the access of resources each resoruce may have its Authorization altered to control specific rights using *Permissions”." />
 <link rel="canonical" href="http://localhost:4000/docs/resources/" />
 <meta property="og:url" content="http://localhost:4000/docs/resources/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-13T10:39:23+02:00" />
+<meta property="article:published_time" content="2017-11-01T11:58:39+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Resources","datePublished":"2017-10-13T10:39:23+02:00","dateModified":"2017-10-13T10:39:23+02:00","description":"A Resources contains a number of Attributes, Views and (if the Application has an Authorization Model) Auth settings.","url":"http://localhost:4000/docs/resources/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Resources","datePublished":"2017-11-01T11:58:39+01:00","dateModified":"2017-11-01T11:58:39+01:00","description":"An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e.g. a person object entity could be a person with name Dalai Lama. In OOPSIE these objects are called a Resource and the information resides in Attributes such as name. A Resources may contain any number of Attributes of various types. All resource entities also gets a unique id (eid) and specific resource entities can be queried using this eid. To create more advanced queries a resource can be modeled with Views to get resource results in a specific manner. To secure the access of resources each resoruce may have its Authorization altered to control specific rights using *Permissions”.","url":"http://localhost:4000/docs/resources/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -87,7 +87,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/home/">Welcome</a>
+          <a class="list-group-item " href=""></a>
         
           
           
@@ -128,6 +128,10 @@
           
           <a class="list-group-item " href="/docs/views/">Views</a>
         
+          
+          
+          <a class="list-group-item " href="/docs/res-auth/">Resource Auth</a>
+        
       </ul>
     </div>
   </div>
@@ -159,11 +163,30 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="true" aria-controls="collapse-4">
-          Api
+          Authorization
         </a>
       </h4>
     </div>
     <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/what-is-auth/">What is Authorization?</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default" style="margin-bottom:0px;">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+          Api
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -177,12 +200,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="true" aria-controls="collapse-6">
           SDKs
         </a>
       </h4>
     </div>
-    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -200,12 +223,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="true" aria-controls="collapse-6">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-7" aria-expanded="true" aria-controls="collapse-7">
           Examples
         </a>
       </h4>
     </div>
-    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -223,12 +246,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-7" aria-expanded="true" aria-controls="collapse-7">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-8" aria-expanded="true" aria-controls="collapse-8">
           Misc
         </a>
       </h4>
     </div>
-    <div id="collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -245,13 +268,43 @@
 
         <div class="col-md-8">
             <h1>Resources</h1>
-            <div id="markdown-content-container"><p>A Resources contains a number of Attributes, Views and (if the Application has an Authorization Model) Auth settings.</p>
+            <div id="markdown-content-container"><p>An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e.g. a person object entity could be a person with name Dalai Lama. In OOPSIE these objects are called a <em>Resource</em> and the information resides in <em>Attributes</em> such as <em>name</em>. A Resources may contain any number of Attributes of various types. All resource entities also gets a unique id (eid) and specific resource entities can be queried using this eid. To create more advanced queries a resource can be modeled with <em>Views</em> to get resource results in a specific manner. To secure the access of resources each resoruce may have its <em>Authorization</em> altered to control specific rights using *Permissions”.</p>
 
-<p>If you are technical you may think of a Resource as a table in a Database.</p>
+<hr />
+<h3 id="create-a-resource">Create a Resource</h3>
+
+<p><strong>1.</strong> Create an application model by following the steps in the section <em><a href="/docs/what-is-an-application">What is an applicaton?</a></em>.</p>
+
+<p><strong>2.</strong> In the <em>Application Model</em> view click the button <em>Create Resource</em>.</p>
+
+<p><strong>3.</strong> In the dialog enter an name for your resource and click <em>OK</em>. In the dialog an <em>Advanced</em> option is available. This option has only one choice at the moment but in the near future it will be possible to choose different types of resources for specific puposes, e.g. timebased resource types for sensor data.</p>
+
+<p><strong>4.</strong> In your <em>application Model</em> view your resource should appear and you are now able to add attributes so you can fill your resource with data.</p>
+
+<p><img src="/img/resource-panel.png" width="650" /></p>
+
+<hr />
+<h4 id="the-resource-panel">The Resource Panel</h4>
+
+<p>In the resource panel you model your <em>Resource</em>. Your resource will hold informaion for each resource entity and you add attributes for specific data, e.g. name, age etc. In the section <a href="/docs/attributes">Attributes</a> you will learn more about attributes and how to add them to your resource.</p>
+
+<p>You can also create views of your resource. making it easy to query the resource using other attribute than the defult eid mentioned in the first chapter of this document. In the section <a href="/docs/views">Views</a> you will learn more about views and how to create them.</p>
+
+<p>In the section <a href="/docs/res-auth">Resource Auth</a> you will learn more about resoruce autorization and how to manage it for your resource.</p>
+
+<h5 id="advanced">Advanced</h5>
+
+<p>A resource can be seen as a database table and it actually is, luckily you don’t have to bother about such stuff as databases. But, some advanced configuration needs to be considered.</p>
+
+<p>Since OOPSIE Cloud is deployed on a so called distributed server environment it will distribute its data to several server nodes or partitions. To keep track of where the data resides OOPSIE by default adds a hidden <em>Partition Key</em> so OOPSIE API easily can fetch the data at the right place without asking all the nodes for the specific resource entity, that would take alot of time to do so.</p>
+
+<p>A partition in OOPSIE can’t grow too big, but pretty big for most of the cases so we actually don’t need to think of this most of the time. For each resource OOPSIE calculates how many entities a resource can hold for all its partitions. Depending on the amount of attributes and the type and size of the attributes OOPSIE recalculates the partition entity size when you save your resource. Hover over the blue information icon in the panel header to see how many entities you can store for the current configuration.</p>
+
+<p>So, if you know that your resource will grow infinite, e.g. sensor based data produced every second, then you need to add your own <em>Partition Key</em> so your resource won’t grow too big and eventually complain. In our examples section we give you an example of using partition keys to come around this. Head over to <a href="/docs/sensor">Sensor Data Example</a> to have a look.</p>
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/techoopsie/oopsie-docs/_docs/application/resources.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/techoopsie/oopsie-docs/blob/development/_docs/application/resources.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>

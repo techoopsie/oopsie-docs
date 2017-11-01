@@ -1,10 +1,10 @@
 ---
-title: Welcome
-permalink: /docs/home/
+title: Developers Guide To OOPSIE
+permalink: /docs/
 redirect_from: /docs/index.html
 ---
 
-Oopsie exists to make it easy for you to create your ideas! Doesn't matter if you are gonna create a small application or if you want to push Big Data for later analyze, we  supply it for you!
+The whole idea of OOPSIE is to make your awesome idea come true. Make it easy for you to create your application and be ready for the big world without all the hassle of maintaining a complex server infratructure. OOPSIE will do that for you, out-of-the-box! It doesn't matter if you are gonna create a small personal application or if you want to push "Big Data" from your enterprise systems for later analysis. With a few drags and clicks you can create full-fledged scalable applications and have it running within minutes. What is scalable? Well, imagine you create an app that over a night goes totally viral ands needs to handle tens of thousands of users and their server requests, how would you hande that? Don't, OOPSIE will do it for you!
 
 Do you really need:
  - To code huge and complex backends? 
@@ -13,4 +13,4 @@ Do you really need:
 
  **NO, and why should you!**
 
- In this homepage you will ( hopefully ) find everything you need to know to create and deploy sites with Oopsie. If anything is missing, please contact us or give us a pull-request to this documentations repository, that is created with [Jekyll](https://jekyllrb.com/).
+ In this Guide To OOPSIE you will find everything you need to know how to create and deploy sites with OOPSIE.

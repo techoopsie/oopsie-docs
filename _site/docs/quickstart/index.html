@@ -24,9 +24,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/quickstart/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-13T10:39:23+02:00" />
+<meta property="article:published_time" content="2017-11-01T11:58:39+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2017-10-13T10:39:23+02:00","dateModified":"2017-10-13T10:39:23+02:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2017-11-01T11:58:39+01:00","dateModified":"2017-11-01T11:58:39+01:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -87,7 +87,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/home/">Welcome</a>
+          <a class="list-group-item " href=""></a>
         
           
           
@@ -128,6 +128,10 @@
           
           <a class="list-group-item " href="/docs/views/">Views</a>
         
+          
+          
+          <a class="list-group-item " href="/docs/res-auth/">Resource Auth</a>
+        
       </ul>
     </div>
   </div>
@@ -159,11 +163,30 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="true" aria-controls="collapse-4">
-          Api
+          Authorization
         </a>
       </h4>
     </div>
     <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/what-is-auth/">What is Authorization?</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default" style="margin-bottom:0px;">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+          Api
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -177,12 +200,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="true" aria-controls="collapse-6">
           SDKs
         </a>
       </h4>
     </div>
-    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -200,12 +223,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="true" aria-controls="collapse-6">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-7" aria-expanded="true" aria-controls="collapse-7">
           Examples
         </a>
       </h4>
     </div>
-    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -223,12 +246,12 @@
   <div class="panel panel-default" style="margin-bottom:0px;">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-7" aria-expanded="true" aria-controls="collapse-7">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-8" aria-expanded="true" aria-controls="collapse-8">
           Misc
         </a>
       </h4>
     </div>
-    <div id="collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -249,19 +272,19 @@
   <p>Estimated time: 15 - 30m</p>
 </blockquote>
 
-<p>This guide will show you how to create and deploy your first Site with Oopsie within minutes. We will go step by step until you have your Site running in our Sandbox environment.</p>
+<p>This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running in our Sandbox environment.</p>
 
 <p>The result of this guide will be a deployed Site ( <em>TodoSite</em> ) that has an Application ( <em>TodoApp</em> ) with one Resource ( <em>Todo</em> ) that has two Attributes ( <em>name</em>, <em>done</em> ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet)</p>
 
-<p>Altough Oopsie is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that wants to have the possibility to scale from 1 request a day to 100k requests per second. Why should you have to care about big and complex backends instead of working on your idea?</p>
+<p>Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?</p>
 
-<p>The place that all the modelling and deployment of your site takes place is in our <a href="http://oopsie-dev.techoopsie.com">Dashboard</a>.</p>
+<p>The place that all the modelling and deployment of your site takes place is in our <a href="https://dashboard.oopsie.io">Dashboard</a>.</p>
 
 <h3 id="prerequisits">Prerequisits:</h3>
 <hr />
 
 <ul>
-  <li>Oopsie account ( Don’t have one? Create one at <a href="http://oopsie.io">Dashboard</a>)</li>
+  <li>OOPSIE account ( Don’t have one? Create one at <a href="https://oopsie.io/create-account">oopsie.io</a>)</li>
   <li>Internet access ( which you obviously have? )</li>
 </ul>
 
@@ -271,19 +294,19 @@
 <hr />
 
 <p>We will start by creating an <a href="/docs/what-is-an-application">Application</a>.
-Everything we will do will be in our <a href="http://oopsie.io">Dashboard</a>, so if you are not there yet you should navigate there in another tab.</p>
+Everything we will do will be in our <a href="https://dashboard.oopsie.io">Dashboard</a>, so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the <a href="/docs/what-is-a-site">Sites</a> view. Just hit the menu button in the left upper corner and then follow the steps below.</p>
 
-<p><strong>1.</strong> Navigate to Application Models in the sidebar and press the button that says <em>Create Application</em>.</p>
+<p><strong>1.</strong> Navigate to Application Models View in the sidebar (highlighted item). Now you should see a <em>Create Application</em> button, press it and continue with next step below.</p>
 
-<p><img src="/img/sidebar-app.png" alt="Navigate to Application" title="Navigate to Application" /></p>
+<p><img src="/img/sidebar-app.png" width="350" /></p>
 
 <p><strong>2.</strong> Fill in the name you want for you Application, we will use <em>TodoApp</em> for this example (you may add an <a href="/docs/what-is-an-authorization">Authorization</a> but we will skip this in the quickstart) and press <em>OK</em>.</p>
 
-<p><img src="/img/create-app.png" alt="Create Application" title="Create Application" /></p>
+<p><img src="/img/create-app.png" width="550" /></p>
 
 <p><strong>3.</strong> You should now see your new Application in the table. Click it! Hopefully you don’t get too scared when you enter your new Application ( It’s not too much there YET )</p>
 
-<p><img src="/img/created-app.png" alt="New empty Application" title="New empty Application" /></p>
+<p><img src="/img/created-app.png" width="550" /></p>
 
 <p><strong>4.</strong> Take a look at the top tabs, you should see <em>Resources</em>, <em>Application</em> and <em>Docs</em>.</p>
 
@@ -293,66 +316,66 @@ Everything we will do will be in our <a href="http://oopsie.io">Dashboard</a>, s
   <li>Docs - If you would like to see what your endpoints will look like on your site, this is where to look. It’s a generated Swagger documentation for you.</li>
 </ul>
 
-<p><img src="/img/app-without-resources.png" alt="Empty Application" title="Empty Application" /></p>
+<p><img src="/img/app-without-resources.png" width="550" /></p>
 
 <p><strong>5.</strong> We probably don’t want to change the name of our Application ( yet ), so we will start by creating a <a href="/docs/resources">Resource</a>. Give it the name <em>Todo</em>.</p>
 
-<p><img src="/img/create-resource.png" alt="Create Resource" title="Create Resource" /></p>
+<p><img src="/img/create-resource.png" width="550" /></p>
 
-<p><strong>6.</strong> Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quickstart we will have two Attributes, one called <em>name</em> that should probably be a <em>TEXT_64</em> and one called <em>done</em> that is a boolean. When you are done press the save button in the upper right corner of the <a href="/docs/resources">Resource</a></p>
+<p><strong>6.</strong> Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quickstart we will have two Attributes, one called <em>name</em> of type <em>Text</em> and one called <em>done</em> that is of type <em>Boolean</em>. For each attribute you need to mark it as done using the check button. When you are done press the save button in the upper right corner of the <a href="/docs/resources">Resource</a></p>
 
 <blockquote>
   <p><strong>Note:</strong> You probably wonder what all these <em>Partition Key</em>, <em>Cluster Key</em>, etc is but we will not worry about that now. You can read more about it later.</p>
 </blockquote>
 
-<p><img src="/img/both-attributes-created.png" alt="Create Attributes" title="Create Attributes" /></p>
+<p><img src="/img/both-attributes-created.png" width="550" /></p>
 
 <p><strong>7.</strong> Your application is done! Gob job! What we need to do now is create a release of it, to deploy it to a Site.</p>
 
 <p>Navigate to the <em>Application</em> tab and <em>Create a release</em> called 1.0 ( You may give a description if you’d like ).</p>
 
-<p><img src="/img/create-release-3.png" alt="Create Release" title="Create Release" /></p>
+<p><img src="/img/create-release-3.png" width="550" /></p>
 
-<p><img src="/img/create-release-dialog.png" alt="Create Release Dialog" title="Create Release Dialog" /></p>
+<p><img src="/img/create-release-dialog.png" width="550" /></p>
 
-<p><img src="/img/release-created.png" alt="Release Created" title="Release Created" /></p>
+<p><img src="/img/release-created.png" width="550" /></p>
 
 <p>By now you should have an Application called <em>TodoApp</em> with a Resource by name <em>Todo</em> that has 2 Attributes, <em>name</em> and <em>done</em> and your first release 1.0.</p>
 
 <h3 id="create-your-first-site">Create your first Site</h3>
 <hr />
 
-<p>A Site contains a number of Applications, may have an Authorization and is possible to deploy to go Live with.</p>
+<p>With sites you choose which applications you want to deploy and all applications in a site share the same base url and other configurations such as security and authorization. An application model can be used in several sites.</p>
 
 <p><strong>1.</strong> Navigate to Site from the sidebar.</p>
 
-<p><img src="/img/site-sidebar.png" alt="Site sidebar" title="Site sidebar" /></p>
+<p><img src="/img/site-sidebar.png" width="550" /></p>
 
 <p><strong>2.</strong> Create your site, <em>TodoSite</em></p>
 
-<p><img src="/img/create-site.png" alt="Create Site" title="Create Site" /></p>
+<p><img src="/img/create-site.png" width="550" /></p>
 
-<p><img src="/img/site-created.png" alt="Site create" title="Site create" /></p>
+<p><img src="/img/site-created.png" width="550" /></p>
 
-<p><strong>3.</strong> When you enter the site you will see something like this. As you can see you may not deploy the site yet because you need to have at least one Application and a Production site ( which Oopsie cloud to deploy too ).</p>
+<p><strong>3.</strong> When you enter the site view you will see something like this. As you can see you may not deploy the site yet because you need to have at least one Application and a Production site (the OOPSIE cloud to deploy too).</p>
 
-<p><img src="/img/entered-site.png" alt="Entered Site" title="Entered Site" /></p>
+<p><img src="/img/entered-site.png" width="650" /></p>
 
-<p><strong>4.</strong> We will start by adding a Production Site and a Origin ( safetynet so other sites can’t use your Site in a browser directly ). You will find these settings in the <em>General Settings</em> panel. Use <em>Sandbox</em> since that one is for free, it will be rate limited pretty hard and should not be used in production.</p>
+<p><strong>4.</strong> We will start by adding a Production Site and a Origin (safetynet so other sites can’t use your Site in a browser directly). You will find these settings in the <em>General Settings</em> panel. Use <em>Sandbox</em> since that one is for free, it will be <em>Rate Limited</em> pretty hard and should not be used in production.</p>
 
-<p><img src="/img/general-settings.png" alt="General settings" title="General settings" /></p>
+<p><img src="/img/general-settings.png" width="550" /></p>
 
-<p>When you have filled it in you save by pressing the checkbox at the top of the panel.</p>
+<p>When you have filled it in you save by pressing the check button at the top of the panel.</p>
 
 <p><strong>5.</strong> Last thing to do before we may deploy our Site is to add at least one Application, good thing we have one! You do this in the <em>Applications</em> panel.</p>
 
-<p><img src="/img/add-app-to-site.png" alt="Add Application to Site" title="Add Application to Site" /></p>
+<p><img src="/img/add-app-to-site.png" width="550" /></p>
 
 <p><strong>6.</strong> By now the Deploy button should be enabled, but still red, which means your Site is Undeployed. Go ahead and deploy it!</p>
 
-<p><img src="/img/site-ready-to-deploy.png" alt="Site ready to deploy" title="Site ready to deploy" /></p>
+<p><img src="/img/site-ready-to-deploy.png" width="650" /></p>
 
-<p>*7.** By now your Site should be deployed, but your Application is not active, active it by clicking activate.</p>
+<p><strong>7.</strong> By now your Site should be deployed, but your Application is not active, active it by clicking activate.</p>
 
 <h3 id="test-your-site">Test your Site</h3>
 
@@ -364,17 +387,17 @@ Everything we will do will be in our <a href="http://oopsie.io">Dashboard</a>, s
 
 <p>Here you can see an autogenerated swagger documentation of your site and it’s even possible to test it by clicking the button <em>try-it-out</em> per endpoint.</p>
 
-<p><img src="/img/site-usage.png" alt="Site Usage" title="Site Usage" /></p>
+<p><img src="/img/site-usage.png" width="650" /></p>
 
 <p>As you can see you have your app there with the different http methods (GET,POST,PUT,DELETE). Scroll down to <em>TodoApp/Todo</em> and press on the blue GET panel.</p>
 
-<p><img src="/img/site-todo-app.png" alt="Site Usage Todo Application" title="Site Usage Todo Application" /></p>
+<p><img src="/img/site-todo-app.png" width="650" /></p>
 
-<p><img src="/img/site-usage-get.png" alt="Site Usage Get" title="Site Usage Get" /></p>
+<p><img src="/img/site-usage-get.png" width="650" /></p>
 
 <p>If you now press <em>try-it-out</em>, you can test to retrieve your Todos.</p>
 
-<p><img src="/img/site-usage-get-try-it-out.png" alt="Site Usage Get Try it out" title="Site Usage Get Try it out" /></p>
+<p><img src="/img/site-usage-get-try-it-out.png" width="650" /></p>
 
 <p>Go ahead and create, get, update and delete some of your Todos :)</p>
 
@@ -386,7 +409,7 @@ Everything we will do will be in our <a href="http://oopsie.io">Dashboard</a>, s
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/techoopsie/oopsie-docs/_docs/quickstart.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/techoopsie/oopsie-docs/blob/development/_docs/quickstart.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>
