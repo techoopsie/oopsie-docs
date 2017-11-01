@@ -36,7 +36,7 @@ An Application contains:
 ### Create a Resource
 ------
 
-If you followed the steps in the previous chapter *Create an Application* the you should now be in the *Application Models* view. In this view you model your application by adding resources, creating releases and other configurations for your application model.
+If you followed the steps in the previous chapter *Create an Application* then you should now be in the *Application Models* view. In this view you model your application by adding resources, creating releases and other configurations for your application model.
 
 To create a resource for your application model head over to the [Resource Section](/docs/resources) in this guide.
 
