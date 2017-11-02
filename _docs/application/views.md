@@ -5,12 +5,15 @@ permalink: /docs/views/
 
 ### Overview
 
-Views give you the possibility to retrieve your data in a different way then the default one.
+Views give you the possibility to retrieve your data in a different way than the default one. When you add the [Attributes](/docs/attributes) you can choose a different query (filtering) order and also change the sorting order.
 
-The [Attributes](/docs/attributes) you add in your view will be possible to use while querying for your data later, you can also decide if you want it to be sorted by *ASC* or *DESC* per [Attribute](/docs/attributes) you add to your View.
+In the [Resource](/docs/resources) panel locate the view button and click on it to enter View details.
+
+<img src="/img/add-view.png" width="350">
 
 ### Example
 
-If you have a Resource with name *Person* and it has two Attributes, *firstname* and *lastname*. You want to by default to retrieve all of your *Persons* by *firstname* in descending order. But you also have another page or a table where the user change the ordering to order by *lastname* ascending or descending instead ( or it might be that you want to create a graph or whatever ). This is when a View is perfect, if you create a View that is called for eg. *byLastname* and add your Attribute *lastname* you will be able to retrieve your data by this by quering below url from the REST Api or by using one of our SDKs.
+If you have a Resource with name *Persons* and it has three Attributes, *firstName*, *lastName* and *civicNo*. You want to, by default, retrieve *Persons* entities by *lastName* in ascending order and secondly by *firstName* in ascending order, this you declare when you add your attributes. But you also have another page where the user will search for persons using its civicNo instead, here a view comes handy. if you create a view that is called for eg. *byCivicNo* and add your Attribute *civicNo* you will be able to retrieve your data easily using this view.
 
-   /resources/:resourceId/views/byLastname
+#### Advanced
+You might wonder why you can't just filter on civicNo when fetching the *Persons* entities, why the need of an extra view? Since OOPSIE distributes its data to several nodes in a distributed server infrastructure it would be very insufficiant to ask all nodes in OOPSIE if it stores a *Persons* entity with a civicNo=value. It is much better to restructure the data in a *View* so OOPSIE easily can ask the node that has the entity to fetch the data.

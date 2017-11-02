@@ -12,8 +12,7 @@
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
-
-    <link rel="shortcut icon" href="/favicon.ico?1">
+    <link rel="shortcut icon" href="/favicon.png">
     <!-- Begin Jekyll SEO tag v2.2.2 -->
 <title>Views | Oopsie Doc</title>
 <meta property="og:title" content="Views" />
@@ -24,9 +23,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/views/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-01T14:15:45+01:00" />
+<meta property="article:published_time" content="2017-11-02T18:30:11+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Views","datePublished":"2017-11-01T14:15:45+01:00","dateModified":"2017-11-01T14:15:45+01:00","description":"Overview","url":"http://localhost:4000/docs/views/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Views","datePublished":"2017-11-02T18:30:11+01:00","dateModified":"2017-11-02T18:30:11+01:00","description":"Overview","url":"http://localhost:4000/docs/views/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -270,15 +269,18 @@
             <h1>Views</h1>
             <div id="markdown-content-container"><h3 id="overview">Overview</h3>
 
-<p>Views give you the possibility to retrieve your data in a different way then the default one.</p>
+<p>Views give you the possibility to retrieve your data in a different way than the default one. When you add the <a href="/docs/attributes">Attributes</a> you can choose a different query (filtering) order and also change the sorting order.</p>
 
-<p>The <a href="/docs/attributes">Attributes</a> you add in your view will be possible to use while querying for your data later, you can also decide if you want it to be sorted by <em>ASC</em> or <em>DESC</em> per <a href="/docs/attributes">Attribute</a> you add to your View.</p>
+<p>In the <a href="/docs/resources">Resource</a> panel locate the view button and click on it to enter View details.</p>
+
+<p><img src="/img/add-view.png" width="350" /></p>
 
 <h3 id="example">Example</h3>
 
-<p>If you have a Resource with name <em>Person</em> and it has two Attributes, <em>firstname</em> and <em>lastname</em>. You want to by default to retrieve all of your <em>Persons</em> by <em>firstname</em> in descending order. But you also have another page or a table where the user change the ordering to order by <em>lastname</em> ascending or descending instead ( or it might be that you want to create a graph or whatever ). This is when a View is perfect, if you create a View that is called for eg. <em>byLastname</em> and add your Attribute <em>lastname</em> you will be able to retrieve your data by this by quering below url from the REST Api or by using one of our SDKs.</p>
+<p>If you have a Resource with name <em>Persons</em> and it has three Attributes, <em>firstName</em>, <em>lastName</em> and <em>civicNo</em>. You want to, by default, retrieve <em>Persons</em> entities by <em>lastName</em> in ascending order and secondly by <em>firstName</em> in ascending order, this you declare when you add your attributes. But you also have another page where the user will search for persons using its civicNo instead, here a view comes handy. if you create a view that is called for eg. <em>byCivicNo</em> and add your Attribute <em>civicNo</em> you will be able to retrieve your data easily using this view.</p>
 
-<p>/resources/:resourceId/views/byLastname</p>
+<h4 id="advanced">Advanced</h4>
+<p>You might wonder why you can’t just filter on civicNo when fetching the <em>Persons</em> entities, why the need of an extra view? Since OOPSIE distributes its data to several nodes in a distributed server infrastructure it would be very insufficiant to ask all nodes in OOPSIE if it stores a <em>Persons</em> entity with a civicNo=value. It is much better to restructure the data in a <em>View</em> so OOPSIE easily can ask the node that has the entity to fetch the data.</p>
 </div>
             <p class="text-center">
               <br />
