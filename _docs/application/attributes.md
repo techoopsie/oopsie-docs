@@ -77,11 +77,11 @@ will be stored in the same partition while the entities
     { 
         "city": "Los Angeles",
         "firstName": "Samuel",
-        "lastname": "Jackson"
+        "lastName": "Jackson"
     }, {
         "city": "Växjö",
         "firstName": "Samuel",
-        "lastname": "Andersson"
+        "lastName": "Andersson"
     }
 ]
 ```
