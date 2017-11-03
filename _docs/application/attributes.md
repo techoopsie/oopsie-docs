@@ -36,9 +36,9 @@ The text type has a two extra fields *min* and *max*. With these fields you can 
 
 #### Partition key
 
-The Partition Key is an advanced feature responsible for data distribution across nodes in the OOPSIE infrastructure. For every resource OOPSIE calculates how many entities it can store per partition. THis means that if you know that your data will grow infinite then you *MUST* add a partition key so your data can be spread out on several paritions an be able to handle more entities. The amount of entities that can be stores is:
+The Partition Key is an advanced feature responsible for data distribution across nodes in the OOPSIE infrastructure. For every resource OOPSIE calculates how many entities it can store per partition. This means that if you know that your data will grow infinite then you *MUST* add a partition key so your data can be spread out on several paritions an be able to handle more entities. The amount of entities that can be stored is:
 ```
-resource max entities * amount of resoruce partitions
+the resource max entities value * the amount of resource partitions
 ```
 So defining a partition key can be extremly useful for data that grows infinite. The OOPSIE Site API will throw an error when max entities is reached for a partition. Below we list some things to think of when using partition keys:
 

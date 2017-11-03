@@ -23,9 +23,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/attributes/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-02T18:49:10+01:00" />
+<meta property="article:published_time" content="2017-11-02T20:51:19+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Attributes","datePublished":"2017-11-02T18:49:10+01:00","dateModified":"2017-11-02T18:49:10+01:00","description":"An Attribute is basically data you want to store for later use. If you are system engineer you may think of an Attribute as a column in a Database Table.","url":"http://localhost:4000/docs/attributes/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Attributes","datePublished":"2017-11-02T20:51:19+01:00","dateModified":"2017-11-02T20:51:19+01:00","description":"An Attribute is basically data you want to store for later use. If you are system engineer you may think of an Attribute as a column in a Database Table.","url":"http://localhost:4000/docs/attributes/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -145,6 +145,10 @@
     </div>
     <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/what-is-a-site/">Site</a>
         
           
           
@@ -301,8 +305,8 @@ If you are system engineer you may think of an Attribute as a column in a Databa
 
 <h4 id="partition-key">Partition key</h4>
 
-<p>The Partition Key is an advanced feature responsible for data distribution across nodes in the OOPSIE infrastructure. For every resource OOPSIE calculates how many entities it can store per partition. THis means that if you know that your data will grow infinite then you <em>MUST</em> add a partition key so your data can be spread out on several paritions an be able to handle more entities. The amount of entities that can be stores is:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>resource max entities * amount of resoruce partitions
+<p>The Partition Key is an advanced feature responsible for data distribution across nodes in the OOPSIE infrastructure. For every resource OOPSIE calculates how many entities it can store per partition. This means that if you know that your data will grow infinite then you <em>MUST</em> add a partition key so your data can be spread out on several paritions an be able to handle more entities. The amount of entities that can be stored is:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>the resource max entities value * the amount of resource partitions
 </code></pre>
 </div>
 <p>So defining a partition key can be extremly useful for data that grows infinite. The OOPSIE Site API will throw an error when max entities is reached for a partition. Below we list some things to think of when using partition keys:</p>
