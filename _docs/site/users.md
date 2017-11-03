@@ -3,7 +3,9 @@ title: Users
 permalink: /docs/users/
 ---
 
-Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don't want to handle Users.
+If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such as Admin you don't want to be created from client side.
 
-> If you are not creating a homepage and want to register your Users with help of Oopsie you might rather want to look at [Api keys](/docs/api-keys) to protect your data.
+Adding a user is pretty straight forward, just fill in all the fields required and hand over the user name (email) and password in a secure manner to the site user you want to have access to your site. Although you are not choosing the *User* [Auth](/docs/what-is-auth) all users will get this Auth.
+
+> WARNING!<br>Be careful with the Auth option *Admin* since this Auth always have all permissions to all resources on the site.
 

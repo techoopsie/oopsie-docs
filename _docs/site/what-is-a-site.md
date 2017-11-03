@@ -50,6 +50,13 @@ In the *Applications* panel click *ADD APPLICATION* and choose app and version. 
 ##### Deployment #####
 If everything is configured properly you should be able to swipe the *Deployed* button and within seconds the site will be deployed, don't forget to activate your apps if it is the first time you deploy the site. Your site is most likely not yet accessible, you need to create an *[Api Key](/docs/api-keys)* or  *[Users](/docs/users)*.
 
+##### Auth #####
+In the Auth tab you handle [API Keys](/docs/api-keys) and [Users](/docs/users) and how these are handled by the site on a request.
+
+- The ***Only allow API Keys*** option tells the site that only requests with an api key can be handled, *user* requests will be rejected.
+
+- The ***Allowed users to register through API*** option tells the site that, when registering [Users](/docs/users), only users with chosen [Auths](/docs/what-is-auth) can be registered through API (SDK).
+
 ### Advanced ###
 ##### Usage #####
 
