@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Users</title>
-    <meta name="description" content="Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don’...">
+    <meta name="description" content="If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such ...">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -17,15 +17,15 @@
 <title>Users | Oopsie Doc</title>
 <meta property="og:title" content="Users" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don’t want to handle Users." />
-<meta property="og:description" content="Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don’t want to handle Users." />
+<meta name="description" content="If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such as Admin you don’t want to be created from client side." />
+<meta property="og:description" content="If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such as Admin you don’t want to be created from client side." />
 <link rel="canonical" href="http://localhost:4000/docs/users/" />
 <meta property="og:url" content="http://localhost:4000/docs/users/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-03T10:57:13+01:00" />
+<meta property="article:published_time" content="2017-11-03T11:23:11+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Users","datePublished":"2017-11-03T10:57:13+01:00","dateModified":"2017-11-03T10:57:13+01:00","description":"Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don’t want to handle Users.","url":"http://localhost:4000/docs/users/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Users","datePublished":"2017-11-03T11:23:11+01:00","dateModified":"2017-11-03T11:23:11+01:00","description":"If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such as Admin you don’t want to be created from client side.","url":"http://localhost:4000/docs/users/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -271,10 +271,12 @@
 
         <div class="col-md-8">
             <h1>Users</h1>
-            <div id="markdown-content-container"><p>Oopsie can help you handle users for your site. You can register, login and logout users via Oopsie, or you can disable this feature all together if you don’t want to handle Users.</p>
+            <div id="markdown-content-container"><p>If you app is very user frequent then you most likely want to create the users through the API using any of the available SDKs. But some types of users such as Admin you don’t want to be created from client side.</p>
+
+<p>Adding a user is pretty straight forward, just fill in all the fields required and hand over the user name (email) and password in a secure manner to the site user you want to have access to your site. Although you are not choosing the <em>User</em> <a href="/docs/what-is-auth">Auth</a> all users will get this Auth.</p>
 
 <blockquote>
-  <p>If you are not creating a homepage and want to register your Users with help of Oopsie you might rather want to look at <a href="/docs/api-keys">Api keys</a> to protect your data.</p>
+  <p>WARNING!<br />Be careful with the Auth option <em>Admin</em> since this Auth always have all permissions to all resources on the site.</p>
 </blockquote>
 
 </div>
