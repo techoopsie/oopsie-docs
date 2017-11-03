@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Api keys</title>
-    <meta name="description" content="You can use Api keys to protect your data if you have any sensitive data.For eg. maybe you want some to give away an API Key that only has READ or WRITE acce...">
+    <meta name="description" content="If Auth is enabled on your Application Resources then you need an API Key or a User to access the resource.">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -17,15 +17,15 @@
 <title>Api keys | Oopsie Doc</title>
 <meta property="og:title" content="Api keys" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="You can use Api keys to protect your data if you have any sensitive data. For eg. maybe you want some to give away an API Key that only has READ or WRITE access to a specific Resource, or a couple of Resources." />
-<meta property="og:description" content="You can use Api keys to protect your data if you have any sensitive data. For eg. maybe you want some to give away an API Key that only has READ or WRITE access to a specific Resource, or a couple of Resources." />
+<meta name="description" content="If Auth is enabled on your Application Resources then you need an API Key or a User to access the resource." />
+<meta property="og:description" content="If Auth is enabled on your Application Resources then you need an API Key or a User to access the resource." />
 <link rel="canonical" href="http://localhost:4000/docs/api-keys/" />
 <meta property="og:url" content="http://localhost:4000/docs/api-keys/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-03T08:49:33+01:00" />
+<meta property="article:published_time" content="2017-11-03T10:57:13+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Api keys","datePublished":"2017-11-03T08:49:33+01:00","dateModified":"2017-11-03T08:49:33+01:00","description":"You can use Api keys to protect your data if you have any sensitive data. For eg. maybe you want some to give away an API Key that only has READ or WRITE access to a specific Resource, or a couple of Resources.","url":"http://localhost:4000/docs/api-keys/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Api keys","datePublished":"2017-11-03T10:57:13+01:00","dateModified":"2017-11-03T10:57:13+01:00","description":"If Auth is enabled on your Application Resources then you need an API Key or a User to access the resource.","url":"http://localhost:4000/docs/api-keys/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -271,11 +271,21 @@
 
         <div class="col-md-8">
             <h1>Api keys</h1>
-            <div id="markdown-content-container"><p>You can use Api keys to protect your data if you have any sensitive data.
-For eg. maybe you want some to give away an API Key that only has READ or WRITE access to a specific Resource, or a couple of Resources.</p>
+            <div id="markdown-content-container"><p>If Auth is enabled on your <em>Application Resources</em> then you need an <em>API Key</em> or a <a href="/docs/users">User</a> to access the resource.</p>
+
+<p>Creating an <em>API Key</em> is pretty straight forward. Make sure you have your site deployed and navigate to the <em>Auth</em> tab in the site view. If you decide to undeploy your site your <em>API Keys</em> will still be available when you deploy again.</p>
 
 <blockquote>
-  <p><strong>Always be carefull with your Api keys, if you think one is compromised, revoke it immediatelly!</strong></p>
+  <p><strong>Always be carefull with your Api keys!<br /> If you think one is compromised, revoke it immediatelly!</strong></p>
+</blockquote>
+
+<p>You can create as many <em>API Keys</em> that you want and each of them can have different permissisons configured on <em>Resource</em> level. This is a really powerful feature that makes it possible for you to issue keys to your trusted third party users with different access rights. Furthermore, you can enter an optional expires date and revoking a key is as simple as clicking the <em>Revoke API Key</em> button*.</p>
+
+<p>You will get the option of downloading the key and the first part of the file name is the id of the <em>API Key</em> (<strong><em>&lt;api-key-id&gt;.oopsie.apikey</em></strong>). Copy the whole file 
+content into your client (SDK to init Site object) when you want to call the site.</p>
+
+<blockquote>
+  <p><strong>WARNING!</strong><br />We DO NOT store any secret (the key part) so loosing it means lost for ever. If you loose it then you should immediatelly revoke the key!</p>
 </blockquote>
 </div>
             <p class="text-center">
