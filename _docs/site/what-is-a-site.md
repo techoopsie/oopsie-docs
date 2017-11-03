@@ -26,9 +26,10 @@ In the *General Settings* panel you change the name of your site, choose a *Prod
 The  *Production Site* listbox lists all available OOPSIE payment plans. At the moment only Sandbox is available.
 
 ##### Origins #####
-In the *Origins* box you enter url's that has access to your site. E.g. http://example.com. You can also add a * (star) to allow all urls. Lets say you hava a browser client that will access your OOPSIE site for data. The code for the client is fetched from the site http://myclientcode.com and you want only clients from this url to have access to your OOPSIE site data, then you enter the url http://myclientcode.com in the origins box. This is a browser specific security feature, Cross-Origin Resource Sharing, CORS. This will not prevent other types of clients to access the OOPSIE site.
+In the *Origins* box you enter url's that has access to your site. E.g. http://example.com. You can also add a * (star) to allow all urls. Lets say you hava a browser client that will access your OOPSIE site for data. The code for the client is fetched from the site http://myclientcode.com and you want only clients from this url to have access to your OOPSIE site data, then you enter the url http://myclientcode.com in the origins box. This is a browser security feature, Cross-Origin Resource Sharing, CORS. 
 
-> You always want to secure your data using the authorization features provided by OOPSIE such as *Api Keys* or *Site Users* managment.
+> **Warning**<br>
+> This will not prevent other types of clients to access the OOPSIE site. You always want to secure your data using the authorization features provided by OOPSIE such as *Api Keys* or *Site Users*
 
 ##### Other properties #####
 
@@ -40,13 +41,72 @@ These three properties is whta you need when accessing the site using REST or an
 
 ##### Adding An Application #####
 
-> *Prerequisites*<br>
+> **Prerequisites**<br>
 > Create and release an *[Application](/docs/what-is-an-application)*
 
-In the *Applications* panel click *ADD APPLICATION* and chooes app and version. The cosen applications are lited and you can see if they are active or not. Initially apps are inactive and you need to deploy the site an then activate your app. Active means that the app and its resources are accessible from the internet.
+In the *Applications* panel click *ADD APPLICATION* and choose app and version. The cosen applications are lited and you can see if they are active or not. Initially apps are inactive and you need to deploy the site an then activate your app. Active means that the app and its resources are accessible from the internet.
 
 
 ##### Deployment #####
 If everything is configured properly you should be able to swipe the *Deployed* button and within seconds the site will be deployed, don't forget to activate your apps if it is the first time you deploy the site. Your site is most likely not yet accessible, you need to create an *[Api Key](/docs/api-keys)* or  *[Users](/docs/users)*.
 
+### Advanced ###
 ##### Usage #####
+
+> Prerequisites<br>
+> If auth is enabled on your *Resources* then you must first create an *API Key*.
+
+If you want to try it out just head over to the *Usage* tab. This is a Swagger generated documentation of all REST enpoints in your site and gives you the possibility to actually make real REST enpoint calls to the deployed site's application resource.
+
+The endpoints are grouped by *Application/Resource* and if you click on the header it will expand and expose the four REST api HTTP methods available.
+- GET - Fetch one or more resource entities from resource
+- POST - Create a resource entity
+- PUT - Save existing resource entity
+- DELETE - Delete resoruce entity
+
+You can click on each of these *methods* an it will open up the endpoint view with information of requst parameters and response. By clicking the *Try it out* button you will be able to enter data that you want to send together with the request.
+
+- ***oopsie-customer-id*** - Prepopulated with the current site's customerID.
+- ***oopsie-site-id*** - Prepopulated with the current site's siteID.
+- ***body*** - JSON with of the resource's all settable attributes.
+
+The *body* is a JSON view of all the settable attributes and can be changed to something like:
+
+```JSON
+{
+  "name": "Techoopsie AB",
+  "city": "Växjö"
+}
+```
+If you have auth enabled you need you api key. Click the padlock on the resource header you want to try and fill in your api key in the box. Now you can click the *Execute* button and it will make a call to the site and a response will be shown just below the buttons in panel with a response code 201.
+
+<img src="/img/post-response.png" width="850">
+
+Below we see the interesting part, the response bodu. Along with your posted attribute data you see five other attributes. These are data inserted by default for every call made to a POST or PUT.
+
+```JSON
+{
+  "name": "Techoopsie AB",
+  "city": "Växjö",
+  "crb": "cb3524eb-3d83-4784-b681-75c1e85ac4ef",
+  "cra": "2017-11-03T07:22:38.464Z",
+  "chb": "cb3524eb-3d83-4784-b681-75c1e85ac4ef",
+  "cha": "2017-11-03T07:22:38.464Z",
+  "eid": "52f0d234-9c00-47e3-b595-ac700345e2fb"
+}
+```
+
+##### Entity Identification #####
+
+- ***eid*** - Uniquely identifies a specific resource entity.
+
+This is a UUID that you use when you want to later fetch specific entities.
+
+##### Audit #####
+
+- ***crb*** -  Created By. The id of "creator"subject creating the data, in this case the api key. (POST)
+- ***cra*** -  Created At. The time the POST occurded (POST)
+- ***chb*** -  Changed By. The id of subject changing the data, in this case the api key. (POST/PUT)
+- ***cha*** -  Changed At. The time the change occurded (POST/PUT)
+
+
