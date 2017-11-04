@@ -5,7 +5,7 @@ permalink: /docs/resources/
 
 An application is usually modeled with objects, e.g. a person object or an employee object. These objects holds information about specific object entities, e.g. a person object entity could be a person with name Dalai Lama. In OOPSIE these objects are called a *Resource* and the information resides in *Attributes* such as *name*. A Resources may contain any number of Attributes of various types. All resource entities also gets a unique id (eid) and specific resource entities can be queried using this eid. To create more advanced queries a resource can be modeled with *Views* to get resource results in a specific manner. To secure the access of resources each resource may have its *Authorization* altered to control specific rights using *Permissions".
 
-------
+------  
 ### Create a Resource
 
 **1.** Create an application model by following the steps in the section *[What is an applicaton?](/docs/what-is-an-application)*.
