@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Java SDK</title>
-    <meta name="description" content="">
+    <meta name="description" content="Install">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -17,13 +17,15 @@
 <title>Java SDK | Oopsie Doc</title>
 <meta property="og:title" content="Java SDK" />
 <meta property="og:locale" content="en_US" />
+<meta name="description" content="Install" />
+<meta property="og:description" content="Install" />
 <link rel="canonical" href="http://localhost:4000/docs/java-sdk/" />
 <meta property="og:url" content="http://localhost:4000/docs/java-sdk/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-03T21:41:31+01:00" />
+<meta property="article:published_time" content="2017-11-04T10:51:21+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Java SDK","datePublished":"2017-11-03T21:41:31+01:00","dateModified":"2017-11-03T21:41:31+01:00","url":"http://localhost:4000/docs/java-sdk/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Java SDK","datePublished":"2017-11-04T10:51:21+01:00","dateModified":"2017-11-04T10:51:21+01:00","description":"Install","url":"http://localhost:4000/docs/java-sdk/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -269,7 +271,95 @@
 
         <div class="col-md-8">
             <h1>Java SDK</h1>
-            <div id="markdown-content-container">
+            <div id="markdown-content-container"><h2 id="install">Install</h2>
+
+<h3 id="maven">Maven</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;dependency&gt;
+		&lt;groupId&gt;io.oopsie&lt;/groupId&gt;
+  		&lt;artifactId&gt;oopsie-sdk-java&lt;/artifactId&gt;
+  		&lt;version&gt;1.0-RC4&lt;/version&gt;
+	&lt;/dependency&gt;
+</code></pre>
+</div>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li><a href="https://oopsie.io/create-account">Register</a> yourself and your company at <a href="https://oopsie.io">oopsie</a></li>
+  <li><a href="https://dashboard.oopsie.io">Login</a> to the dashboard and deploy an oopsie site.</li>
+  <li>Customer ID, Site ID and API Key information fetched from <em><a href="/docs/what-is-a-site">Site View</a></em></li>
+</ul>
+
+<h3 id="initialize-site">Initialize site</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    Site librarySite = new Site(apiUrl, customerId, siteId, apiKey);
+    librarySite.init();
+    
+    ...
+    
+</code></pre>
+</div>
+
+<h3 id="choose-app-and-resource">Choose app and resource</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    Application bookApp = librarySite.getApplication("BookApp");
+    Resource bookRes = bookApp.getResource("Book");
+    
+    ...
+    
+</code></pre>
+</div>
+
+<h3 id="create-entity-http-post">Create entity (HTTP POST)</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	Statement stmnt = bookRes.create()
+		.withParam("Title", "The Master and Margarita")
+    		.withParam("Author", "bulgakov, mikhail");
+    ResultSet result = librarySite.execute(stmnt);
+    Row row = result.one();
+    UUID bookId = row.getUUID("eid");
+    
+    ...
+    
+</code></pre>
+</div>
+
+<h3 id="get-entity-http-get">Get entity (HTTP GET)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>	stmnt = bookRes.get().withParam("eid", bookId);
+	ResultSet result = librarySite.execute(stmnt);
+	String author = result.one().getString("Author");
+	
+	...
+	
+</code></pre>
+</div>
+
+<h3 id="save-entity-http-put">Save entity (HTTP PUT)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>	Map&lt;String, Object&gt; params = new HashMap();
+	params.put("eid", bookId);
+	params.put("Title", "The Master and Margarita");
+	params.put("Author", "Bulgakov, Mikhail");
+	
+	stmnt = bookRes.save().withParams(params);
+	ResultSet result = librarySite.execute(stmnt);
+	
+	...
+	
+</code></pre>
+</div>
+
+<h3 id="delete-entity-http-delete">Delete entity (HTTP DELETE)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>	stmnt = bookRes.delete().withParam("eid", bookId);
+	librarySite.execute(stmnt);
+	
+	...
+	
+</code></pre>
+</div>
+
+<h3 id="save-partitial-entity-http-patch">Save Partitial entity (HTTP PATCH)</h3>
+
+<p>Soon available.</p>
+
 </div>
             <p class="text-center">
               <br />
