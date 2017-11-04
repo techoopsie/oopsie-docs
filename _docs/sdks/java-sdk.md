@@ -4,23 +4,24 @@ permalink: /docs/java-sdk/
 ---
 
 
-## Install
+### Install
 
-### Maven
+#### Maven
 ``` 
 	<dependency>
 		<groupId>io.oopsie</groupId>
   		<artifactId>oopsie-sdk-java</artifactId>
-  		<version>1.0-RC4</version>
+  		<version>1.0-RC5</version>
 	</dependency>
 ``` 
-
-### Prerequisites
+<br>
+### Usage
+#### Prerequisites
 * [Register](https://oopsie.io/create-account) yourself and your company at [oopsie](https://oopsie.io)
 * [Login](https://dashboard.oopsie.io) to the dashboard and deploy an oopsie site.
 * Customer ID, Site ID and API Key information fetched from *[Site View](/docs/what-is-a-site)*
 
-### Initialize site
+#### Initialize site
 
 ```
     Site librarySite = new Site(apiUrl, customerId, siteId, apiKey);
@@ -30,7 +31,7 @@ permalink: /docs/java-sdk/
     
 ```
 
-### Choose app and resource
+#### Choose app and resource
 
 ```
     Application bookApp = librarySite.getApplication("BookApp");
@@ -40,7 +41,7 @@ permalink: /docs/java-sdk/
     
 ```
 
-### Create entity (HTTP POST)
+#### Create entity (HTTP POST)
 
 ```
 	Statement stmnt = bookRes.create()
@@ -54,7 +55,7 @@ permalink: /docs/java-sdk/
     
 ```
 
-### Get entity (HTTP GET)
+#### Get entity (HTTP GET)
 ```
 	stmnt = bookRes.get().withParam("eid", bookId);
 	ResultSet result = librarySite.execute(stmnt);
@@ -64,7 +65,7 @@ permalink: /docs/java-sdk/
 	
 ```
 
-### Save entity (HTTP PUT)
+#### Save entity (HTTP PUT)
 ```
 	Map<String, Object> params = new HashMap();
 	params.put("eid", bookId);
@@ -78,7 +79,7 @@ permalink: /docs/java-sdk/
 	
 ```
 
-### Delete entity (HTTP DELETE)
+#### Delete entity (HTTP DELETE)
 ```
 	stmnt = bookRes.delete().withParam("eid", bookId);
 	librarySite.execute(stmnt);
@@ -87,7 +88,7 @@ permalink: /docs/java-sdk/
 	
 ```
 
-### Save Partitial entity (HTTP PATCH)
+#### Save Partitial entity (HTTP PATCH)
 
 Soon available.
 
