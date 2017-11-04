@@ -21,6 +21,15 @@ The place that all the modelling and deployment of your site takes place is in o
 
 That's it! Isn't it great!?
 
+### Workflow to get your site up and running
+-  Create an *[Application](/docs/what-is-an-application)*
+-  Create a *[Resource](/docs/resources)*
+-  Add *[Attributes](/docs/attributes)* to the *[Resource](/docs/resources)*
+-  Create a release of the *[Application](/docs/what-is-an-application)*
+-  Create a *[Site](/docs/what-is-a-site)*
+-  Add the *[Application Release](/docs/what-is-an-application)* to the *[Site](/docs/what-is-a-site)*
+-  Set the *General Settings* of your *[Site](/docs/what-is-a-site)* and create *[API Key](/docs/api-keys)* if *[Auth](/docs/res-auth)* is enabled
+
 ### Create your first Application
 ------
 
