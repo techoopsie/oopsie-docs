@@ -13,7 +13,7 @@ Although OOPSIE is created to handle a huge amount of traffic and data ( Big Dat
 
 The place that all the modelling and deployment of your site takes place is in our [Dashboard](https://dashboard.oopsie.io).
 
-### Prerequisite:
+### Prerequisites:
 ------
 
 - OOPSIE account ( Don't have one? Create one at [oopsie.io](https://oopsie.io/create-account))
