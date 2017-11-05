@@ -11,4 +11,4 @@ You can create as many models you want and also alter existing models. If any mo
 
 <img src="/img/permissions.png" width="450">
 
-> ***Remeber!*** The permission set on the *Auths* are inital (defult) permission when added to a resource and can individually on each resource be alterer to use another permission. This means that two different resource with same Auth, e.g. Staff Auth, can have different permissions. Very powerful feature!
+> ***Remember!*** The permission set on the *Auths* are inital (defult) permission when added to a resource and can individually on each resource be alterer to use another permission. This means that two different resource with same Auth, e.g. Staff Auth, can have different permissions. Very powerful feature!
