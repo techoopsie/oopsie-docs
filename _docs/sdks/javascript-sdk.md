@@ -9,7 +9,7 @@ permalink: /docs/javascript-sdk/
 #### npm
 
 ```bash
-npm install oopsie-sdk
+npm install @techoopsie/oopsie
 ```
 
 #### CDN
