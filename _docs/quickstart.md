@@ -7,13 +7,13 @@ permalink: /docs/quickstart/
 
 This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running in our Sandbox environment.
 
-The result of this guide will be a deployed Site ( *TodoSite* ) that has an Application ( *TodoApp* ) with one Resource ( *Todo* ) that has two Attributes ( *name*, *done* ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet) 
+The result of this guide will be a deployed Site ( *TodoSite* ) that has an Application ( *TodoApp* ) with one Resource ( *Todo* ) that has two Attributes ( *name*, *done* ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet)
 
-Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?
+Although OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?
 
 The place that all the modelling and deployment of your site takes place is in our [Dashboard](https://dashboard.oopsie.io).
 
-### Prerequisits:
+### Prerequisites:
 ------
 
 - OOPSIE account ( Don't have one? Create one at [oopsie.io](https://oopsie.io/create-account))
@@ -40,12 +40,12 @@ Everything we will do will be in our [Dashboard](https://dashboard.oopsie.io), s
 
 <img src="/img/sidebar-app.png" width="350">
 
-**2.** Fill in the name you want for you Application, we will use *TodoApp* for this example (you may add an [Authorization](/docs/what-is-an-authorization) but we will skip this in the quickstart) and press *OK*.
+**2.** Fill in the name you want for you Application, we will use *TodoApp* for this example (you may add an [Authorization](/docs/what-is-an-authorization) but we will skip this in the quick start) and press *OK*.
 
 <img src="/img/create-app.png" width="550">
 
 **3.** You should now see your new Application in the table. Click it! Hopefully you don't get too scared when you enter your new Application ( It's not too much there YET )
- 
+
 <img src="/img/created-app.png" width="550">
 
 **4.** Take a look at the top tabs, you should see *Resources*, *Application* and *Docs*.
@@ -60,9 +60,9 @@ Everything we will do will be in our [Dashboard](https://dashboard.oopsie.io), s
 
 <img src="/img/create-resource.png" width="550">
 
-**6.** Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quickstart we will have two Attributes, one called *name* of type *Text* and one called *done* that is of type *Boolean*. For each attribute you need to mark it as done using the check button. When you are done press the save button in the upper right corner of the [Resource](/docs/resources)
+**6.** Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quick start we will have two Attributes, one called *name* of type *Text* and one called *done* that is of type *Boolean*. For each attribute you need to mark it as done using the check button. When you are done press the save button in the upper right corner of the [Resource](/docs/resources)
 
-   >**Note:** You probably wonder what all these *Partition Key*, *Cluster Key*, etc is but we will not worry about that now. You can read more about it later.
+   >**Note:** You probably wonder what all these *Partition Key*, *Cluster Key*, etc. are but we will not worry about that now. You can read more about it later.
 
 <img src="/img/both-attributes-created.png" width="550">
 
@@ -81,7 +81,7 @@ By now you should have an Application called *TodoApp* with a Resource by name *
 ### Create your first Site
 ------
 
-With sites you choose which applications you want to deploy and all applications in a site share the same base url and other configurations such as security and authorization. An application model can be used in several sites.
+With sites you choose which applications you want to deploy and all applications in a site share the same base URL and other configurations such as security and authorization. An application model can be used in several sites.
 
 **1.** Navigate to Site from the sidebar.
 
@@ -97,7 +97,7 @@ With sites you choose which applications you want to deploy and all applications
 
 <img src="/img/entered-site.png" width="650">
 
-**4.** We will start by adding a Production Site and a Origin (safetynet so other sites can't use your Site in a browser directly). You will find these settings in the *General Settings* panel. Use *Sandbox* since that one is for free, it will be *Rate Limited* pretty hard and should not be used in production.
+**4.** We will start by adding a Production Site and a Origin (safety net so other sites can't use your Site in a browser directly). You will find these settings in the *General Settings* panel. Use *Sandbox* since that one is for free, it will be *Rate Limited* pretty hard and should not be used in production.
 
 <img src="/img/general-settings.png" width="550">
 
@@ -117,11 +117,11 @@ With sites you choose which applications you want to deploy and all applications
 
 If you have followed all the previous steps you should now have a deployed Site, ready to be used. Last thing to do is storing some todos and getting them.
 
-There are alot of different ways to use your Site, either through a REST Api or by using one of our SDKs for Javascript, Java, etc.
+There are a lot of different ways to use your Site, either through a REST Api or by using one of our SDKs for JavaScript, Java, etc.
 
-In this guide we will test our Site by using the REST Api because this we can do directly from Oopsie dashboard. If you look at your tabs in the Site view you will see there is a tab called *Usage*, click on it.
+In this guide we will test our Site by using the REST Api because this we can do directly from OOPSIE dashboard. If you look at your tabs in the Site view you will see there is a tab called *Usage*, click on it.
 
-Here you can see an autogenerated swagger documentation of your site and it's even possible to test it by clicking the button *try-it-out* per endpoint.
+Here you can see an auto generated swagger documentation of your site and it's even possible to test it by clicking the button *try-it-out* per endpoint.
 
 <img src="/img/site-usage.png" width="650">
 
@@ -131,14 +131,14 @@ As you can see you have your app there with the different http methods (GET,POST
 
 <img src="/img/site-usage-get.png" width="650">
 
-If you now press *try-it-out*, you can test to retrieve your Todos.
+If you now press *try-it-out*, you can test to retrieve your TODOs.
 
 <img src="/img/site-usage-get-try-it-out.png" width="650">
 
 Go ahead and create, get, update and delete some of your Todos :)
 
-Maybe you would like to be able to get your *Todos* by *name*, no problem, just create a [View](/docs/views) or update your app to have a [*Clustering Key*](/docs/attributes#Clustering Key) for it! 
+Maybe you would like to be able to get your *Todos* by *name*, no problem, just create a [View](/docs/views) or update your app to have a [*Clustering Key*](/docs/attributes#Clustering Key) for it!
 
 ### Done
 
-Hope you enjoyed this Quickstart, if you have any feedback or would like other tutorials, feel free to contact us or create a pull request to this repository ( button right below will guide you to it ).
+Hope you enjoyed this quick start, if you have any feedback or would like other tutorials, feel free to contact us or create a pull request to this repository ( button right below will guide you to it ).

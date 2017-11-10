@@ -3,7 +3,7 @@ title: Resource Auth
 permalink: /docs/res-auth/
 ---
 
-All *[Resources](/docs/resources)* have an authorization config attached to them. This menas that you can fine tune how your users access the data on a resource level. E.g. the registry of *Customers* the *staff* at your comapny should have access right to all  *customer* data, but the customers themselves should only be able to read and write their own data.
+All *[Resources](/docs/resources)* have an authorization config attached to them. This means that you can fine tune how your users access the data on a resource level. E.g. the registry of *Customers* the *staff* at your comapny should have access right to all  *customer* data, but the customers themselves should only be able to read and write their own data.
 
 With *[Authorization Models](/docs/what-is-auth)* you can create specific *Authorizations* with different default *Permissions*. Below is a screenshot of how the above example could look like when configured on a resource called *Customers*.
 
