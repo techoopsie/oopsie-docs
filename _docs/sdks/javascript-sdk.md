@@ -12,13 +12,20 @@ permalink: /docs/javascript-sdk/
 npm install @techoopsie/oopsie
 ```
 
-#### CDN
+#### Script tag
 
 ```html
-<script src="https://cdnjs.cloudflare.com/oopsie/libs/oopsie-sdk/0.99.0/js/oopsie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie/dist/oopsie.min.js"></script>
 ```
 
+#### Or a specific version
 
+```html
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@<version>/dist/oopsie.min.js"></script>
+
+<!-- For example -->
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@0.0.6/dist/oopsie.min.js"></script>
+```
 
 ## Usage
 
