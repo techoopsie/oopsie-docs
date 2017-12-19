@@ -12,11 +12,36 @@ permalink: /docs/javascript-sdk/
 npm install @techoopsie/oopsie
 ```
 
-#### CDN
+### Script tag
+
+To get latest:
 
 ```html
-<script src="https://cdnjs.cloudflare.com/oopsie/libs/oopsie-sdk/0.99.0/js/oopsie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie/dist/oopsie.min.js"></script>
+``` 
+
+Or to get a specific version:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@<version>/dist/oopsie.min.js"></script>
+
+<!-- For example -->
+<script src="https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@0.0.6/dist/oopsie.min.js"></script>
 ```
+
+
+### Webpack
+
+If you are using webpack you might need to add 
+
+```
+node: {
+    fs: "empty"
+}
+```
+
+to your webpack.config.js
+
 
 
 
@@ -60,8 +85,14 @@ let params = {
     eid: 'f89028c3-7d02-4ce8-8bd4-1d88b51aa461'
 };
 myResource.get().withParams(params).execute(cb);
-myResource.get().byView('MyView').execute(cb);
+
+// To get data in a View you can specify which View to use.
+myResource.get().byView('MyView').withParams(params).execute(cb);
+
+// If you want to change the limit, defaults to 100. Can be 0 to 1000.
 myResource.get().limit(100).execute(cb);
+
+// When relations exists you can expand them
 myResource.get().expandRelations().execute(cb);
 
 // You can also add all of the methods after get() in different order and use the ones you need.
@@ -113,10 +144,29 @@ myResource.delete().execute(cb);
 myResource.delete().withParams(params).execute(cb);
 ```
 
+# Api key
+
+If you are using auth on your Site, you can create Api Keys to protect your data.
+You can use it in the JS SDK as below, but be carefull, you shouldn't do this in the frontend.
+If you do put it in the frontend, be sure it's not any secret data you want to protect.
+For example, you may put a read only Api Key in the frontend because you want anyone to be able to read your data, 
+but you create data in your backend where you use another Api key with read permissions.
+
+```js
+var oopsie = new OopsieSite(apiEndpoint, siteId, customerId);
+oopsie.init((err) => {
+    
+    // We are done loading meta data...
+    // Now we can use oopsie to create, get, save, delete entities.
+    var apiKey = 'api-key-from-dashboard'; 
+    oopsie.setApiKey(apiKey);
+});
+```
+
 
 ## Users
 
-The Javascript SDK can also help you manage Users for your site.
+If you have auth enabled on your site you can manage Users via the SDK.
 
 #### Login
 
@@ -135,6 +185,8 @@ oopsie.login(user, (err) => {
 ```
 
 #### Register
+
+To let Users register via the SDK you need to set this up in the Dashboard for your site. By default no Roles are allowed to register via the API and only the Admin for the Site can add Users in the Dashboard.
 
 ```js
 var user = {
@@ -190,3 +242,15 @@ oopsie.me((err, me) => {
     // We can inspect the logged in user, email etc.
 });
 ```
+
+# Promises
+
+Oopsie SDK follows nodejs callback pattern so you can use bluebird to promisefy the functions if you rather use promises then callbacks.
+
+# Examples
+
+Examples can be found in the *examples* folder. Each example will be in a subfolder and include everything needed to run the example. They need a working Oopsie site to run, and we will most likely provide them for you, but you can also create your own Site in the sandbox and try the examples against your own Site.
+
+**NOTE: the examples are meant to give you a better understanding of how you can use Oopsie to store your data and handle your Users, they are not meant to be a beauty for the eye ;)**
+
+**If you can't stand the awesome design of the examples, feel free to give us a pull request**
