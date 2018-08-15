@@ -23,9 +23,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/quickstart/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-04T19:02:05+01:00" />
+<meta property="article:published_time" content="2018-08-15T07:25:30+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2017-11-04T19:02:05+01:00","dateModified":"2017-11-04T19:02:05+01:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2018-08-15T07:25:30+02:00","dateModified":"2018-08-15T07:25:30+02:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -275,13 +275,13 @@
   <p>Estimated time: 15 - 30m</p>
 </blockquote>
 
-<p>This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running in our Sandbox environment.</p>
+<p>This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running.</p>
 
-<p>The result of this guide will be a deployed Site ( <em>TodoSite</em> ) that has an Application ( <em>TodoApp</em> ) with one Resource ( <em>Todo</em> ) that has two Attributes ( <em>name</em>, <em>done</em> ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet)</p>
+<p>The result of this guide will be a deployed <em><a href="/docs/what-is-a-site">Site</a></em> ( <em>TodoSite</em> ) that has an <em><a href="/docs/what-is-an-application">Application</a></em> ( <em>TodoApp</em> ) with one <em><a href="/docs/resources">Resource</a></em> ( <em>Todo</em> ) that has two Attributes ( <em>name</em>, <em>done</em> ). We will be able to POST(create), GET(fetch), PUT(update) and DELETE(delete) Todo entities via a simple API or use one of our SDKs.</p>
 
-<p>Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?</p>
+<p>Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, e.g. apps taht wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?</p>
 
-<p>The place that all the modelling and deployment of your site takes place is in our <a href="https://dashboard.oopsie.io">Dashboard</a>.</p>
+<p>The place that all the modelling and deployment of your site takes place is in our <a href="https://dashboard-next.oopsie.io">Dashboard</a>.</p>
 
 <h3 id="prerequisits">Prerequisits:</h3>
 <hr />
@@ -290,8 +290,6 @@
   <li>OOPSIE account ( Don’t have one? Create one at <a href="https://oopsie.io/create-account">oopsie.io</a>)</li>
   <li>Internet access ( which you obviously have? )</li>
 </ul>
-
-<p>That’s it! Isn’t it great!?</p>
 
 <h3 id="workflow-to-get-your-site-up-and-running">Workflow to get your site up and running</h3>
 <ul>
@@ -308,78 +306,57 @@
 <hr />
 
 <p>We will start by creating an <a href="/docs/what-is-an-application">Application</a>.
-Everything we will do will be in our <a href="https://dashboard.oopsie.io">Dashboard</a>, so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the <a href="/docs/what-is-a-site">Sites</a> view. Just hit the menu button in the left upper corner and then follow the steps below.</p>
+Everything we will do will be in our <a href="https://dashboard-next.oopsie.io">Dashboard</a>, so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the <a href="/docs/what-is-a-site">Sites</a> view. Just hit the menu button in the left upper corner and then follow the steps below.</p>
 
-<p><strong>1.</strong> Navigate to Application Models View in the sidebar (highlighted item). Now you should see a <em>Create Application</em> button, press it and continue with next step below.</p>
+<p><strong>1.</strong> Navigate to application models view by clicking “Application MOdels”, the highlighted item in the sidebar image below.
+<img src="/img/sidebar-app.png" width="150" /></p>
 
-<p><img src="/img/sidebar-app.png" width="350" /></p>
-
-<p><strong>2.</strong> Fill in the name you want for you Application, we will use <em>TodoApp</em> for this example (you may add an <a href="/docs/what-is-an-authorization">Authorization</a> but we will skip this in the quickstart) and press <em>OK</em>.</p>
-
-<p><img src="/img/create-app.png" width="550" /></p>
-
-<p><strong>3.</strong> You should now see your new Application in the table. Click it! Hopefully you don’t get too scared when you enter your new Application ( It’s not too much there YET )</p>
-
-<p><img src="/img/created-app.png" width="550" /></p>
-
-<p><strong>4.</strong> Take a look at the top tabs, you should see <em>Resources</em>, <em>Application</em> and <em>Docs</em>.</p>
-
-<ul>
-  <li>Resources - this is where you model your different <a href="/docs/resources">Resources</a> in your Application.</li>
-  <li>Application - Here you have general things about your Application, like change the name or create a release.</li>
-  <li>Docs - If you would like to see what your endpoints will look like on your site, this is where to look. It’s a generated Swagger documentation for you.</li>
-</ul>
-
-<p><img src="/img/app-without-resources.png" width="550" /></p>
-
-<p><strong>5.</strong> We probably don’t want to change the name of our Application ( yet ), so we will start by creating a <a href="/docs/resources">Resource</a>. Give it the name <em>Todo</em>.</p>
-
-<p><img src="/img/create-resource.png" width="550" /></p>
-
-<p><strong>6.</strong> Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quickstart we will have two Attributes, one called <em>name</em> of type <em>Text</em> and one called <em>done</em> that is of type <em>Boolean</em>. For each attribute you need to mark it as done using the check button. When you are done press the save button in the upper right corner of the <a href="/docs/resources">Resource</a></p>
-
+<p><strong>2.</strong> When Application Models view is loaded nothing is really shown since you don’t have any apps yet. You should see a big blue round button with a plus in your right bottom corner though, click it. Fill in the name you want for you Application, we will use <em>TodoApp</em> for this example, press <em>OK</em> (you may add an <a href="/docs/what-is-an-authorization">Authorization</a> but we will skip this in the quickstart).
+<img src="/img/create-app.png" width="550" /></p>
 <blockquote>
-  <p><strong>Note:</strong> You probably wonder what all these <em>Partition Key</em>, <em>Cluster Key</em>, etc is but we will not worry about that now. You can read more about it later.</p>
+  <p><strong>Warning</strong><br />
+A deployed application or a resource with no authorization will be publicly accessible on the internet. Remember to undeploy if you go live with your example application. Read more about <a href="/docs/what-is-an-authorization">Authorization</a>*</p>
 </blockquote>
 
-<p><img src="/img/both-attributes-created.png" width="550" /></p>
+<p><strong>3.</strong> You should now see your new Application in the table. Click it! 
+<img src="/img/created-app.png" width="550" /></p>
 
-<p><strong>7.</strong> Your application is done! Gob job! What we need to do now is create a release of it, to deploy it to a Site.</p>
+<p><strong>4.</strong> Now you have entered the view of your Application “TodoApp”. The first time you enter the application’s view a message is shown since you have not created any resources in your app. A resource can be seen as an object in your application and defines the structure of your data for that object. You will learn more about this in the <em><a href="/docs/resources">Resource</a></em> section.
+<img src="/img/app-without-resources.png" width="550" /></p>
 
-<p>Navigate to the <em>Application</em> tab and <em>Create a release</em> called 1.0 ( You may give a description if you’d like ).</p>
+<p><strong>5.</strong> Create a <a href="/docs/resources">Resource</a> by clicking the blue round button in your right bottom corner. Give it the name <em>Todo</em>.
+<img src="/img/create-resource.png" width="550" /></p>
 
-<p><img src="/img/create-release-3.png" width="550" /></p>
+<p><strong>6.</strong> Now that we have a resource we can actually start the real modeling, adding the <a href="/docs/attributes">Attributes</a>. As stated in the beginning of this quickstart we will have two Attributes, one called <em>name</em> of type <em>Text</em> and one called <em>done</em> that is of type <em>Boolean</em>. Click the “pen” button and then click “Add Attribute” for each of them. When done click the save button.
+<img src="/img/both-attributes-created.png" width="450" /></p>
+<blockquote>
+  <p><strong>Note:</strong>
+All resources always have an id attribute and is added by default. This id identifies a specific resource entitiy you have saved. You don’t need to worry about setting values for id, this is handled by OOPSIE when you save entities/objects in your application.</p>
+</blockquote>
 
-<p><img src="/img/create-release-dialog.png" width="550" /></p>
+<p><strong>7.</strong> Your application is done! What we need to do now is create a release of it so we are able to deploy it to a Site. Click the “Release” button on the top right corner and then click “Create Release” enter “1.0” ( You may give a description if you’d like ).
+<img src="/img/create-release-dialog.png" width="650" /></p>
 
-<p><img src="/img/release-created.png" width="550" /></p>
+<p>When you create your first release of an application you get the option to navigate to the Sites view, do this.</p>
 
 <p>By now you should have an Application called <em>TodoApp</em> with a Resource by name <em>Todo</em> that has 2 Attributes, <em>name</em> and <em>done</em> and your first release 1.0.</p>
 
 <h3 id="create-your-first-site">Create your first Site</h3>
 <hr />
 
-<p>With sites you choose which applications you want to deploy and all applications in a site share the same base url and other configurations such as security and authorization. An application model can be used in several sites.</p>
+<p>With sites you choose which applications you want to deploy and all applications in a site share the same access point (url) and other configurations such as security and authorization. An application model can be used in several sites.</p>
 
-<p><strong>1.</strong> Navigate to Site from the sidebar.</p>
+<p><strong>1.</strong> Navigate to Site from the sidebar if you are not already there.</p>
 
-<p><img src="/img/site-sidebar.png" width="550" /></p>
-
-<p><strong>2.</strong> Create your site, <em>TodoSite</em></p>
+<p><strong>2.</strong> Create your site by clicking the blue round button and name it <em>TodoSite</em></p>
 
 <p><img src="/img/create-site.png" width="550" /></p>
 
-<p><img src="/img/site-created.png" width="550" /></p>
-
-<p><strong>3.</strong> When you enter the site view you will see something like this. As you can see you may not deploy the site yet because you need to have at least one Application and a Production site (the OOPSIE cloud to deploy too).</p>
+<p><strong>3.</strong> Enter your site by clicking the row with your site, you might need to click the save button first. You can not deploy the site yet because you need to have at least one Application and a Production site (the OOPSIE cloud to deploy too).</p>
 
 <p><img src="/img/entered-site.png" width="650" /></p>
 
-<p><strong>4.</strong> We will start by adding a Production Site and a Origin (safetynet so other sites can’t use your Site in a browser directly). You will find these settings in the <em>General Settings</em> panel. Use <em>Sandbox</em> since that one is for free, it will be <em>Rate Limited</em> pretty hard and should not be used in production.</p>
-
-<p><img src="/img/general-settings.png" width="550" /></p>
-
-<p>When you have filled it in you save by pressing the check button at the top of the panel.</p>
+<p><strong>4.</strong> We will start by adding a Production Site and a Origin (safetynet so other sites can’t use your Site in a browser directly). You will find these settings in the <em>General Settings</em> panel. Use <em>Free</em> since that one you can use at no charge, it will be <em>Limited</em> pretty hard and should not be used in production. Click the pen button in the “General Settings” panel. For the Origin option just enter a the star character “*”.</p>
 
 <p><strong>5.</strong> Last thing to do before we may deploy our Site is to add at least one Application, good thing we have one! You do this in the <em>Applications</em> panel.</p>
 
@@ -389,7 +366,7 @@ Everything we will do will be in our <a href="https://dashboard.oopsie.io">Dashb
 
 <p><img src="/img/site-ready-to-deploy.png" width="650" /></p>
 
-<p><strong>7.</strong> By now your Site should be deployed, but your Application is not active, active it by clicking activate.</p>
+<p><strong>7.</strong> By now your Site should be deployed, but your Application is not active, activate it by clicking activate. Click application row to expand it if you can’t see the “Activate” button.</p>
 
 <h3 id="test-your-site">Test your Site</h3>
 
@@ -475,7 +452,7 @@ Everything we will do will be in our <a href="https://dashboard.oopsie.io">Dashb
     <div class="container">
 
         <p class="text-center">
-            Oopsie Doc 2017 |
+            Oopsie Doc 2018 |
             Powered by <a href="http://oopsie.io">Techoopsie AB</a>
         </p>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->
