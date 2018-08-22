@@ -23,9 +23,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/quickstart/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-15T07:25:30+02:00" />
+<meta property="article:published_time" content="2018-08-22T14:17:44+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2018-08-15T07:25:30+02:00","dateModified":"2018-08-15T07:25:30+02:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Quickstart","datePublished":"2018-08-22T14:17:44+02:00","dateModified":"2018-08-22T14:17:44+02:00","description":"Estimated time: 15 - 30m","url":"http://localhost:4000/docs/quickstart/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -279,11 +279,11 @@
 
 <p>The result of this guide will be a deployed <em><a href="/docs/what-is-a-site">Site</a></em> ( <em>TodoSite</em> ) that has an <em><a href="/docs/what-is-an-application">Application</a></em> ( <em>TodoApp</em> ) with one <em><a href="/docs/resources">Resource</a></em> ( <em>Todo</em> ) that has two Attributes ( <em>name</em>, <em>done</em> ). We will be able to POST(create), GET(fetch), PUT(update) and DELETE(delete) Todo entities via a simple API or use one of our SDKs.</p>
 
-<p>Altough OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, e.g. apps taht wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?</p>
+<p>Although OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, e.g. apps that wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex back ends instead of working on your idea?</p>
 
 <p>The place that all the modelling and deployment of your site takes place is in our <a href="https://dashboard-next.oopsie.io">Dashboard</a>.</p>
 
-<h3 id="prerequisits">Prerequisits:</h3>
+<h3 id="prerequisites">Prerequisites:</h3>
 <hr />
 
 <ul>
@@ -308,20 +308,20 @@
 <p>We will start by creating an <a href="/docs/what-is-an-application">Application</a>.
 Everything we will do will be in our <a href="https://dashboard-next.oopsie.io">Dashboard</a>, so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the <a href="/docs/what-is-a-site">Sites</a> view. Just hit the menu button in the left upper corner and then follow the steps below.</p>
 
-<p><strong>1.</strong> Navigate to application models view by clicking “Application MOdels”, the highlighted item in the sidebar image below.
+<p><strong>1.</strong> Navigate to application models view by clicking “Application Models”, the highlighted item in the sidebar image below.
 <img src="/img/sidebar-app.png" width="150" /></p>
 
 <p><strong>2.</strong> When Application Models view is loaded nothing is really shown since you don’t have any apps yet. You should see a big blue round button with a plus in your right bottom corner though, click it. Fill in the name you want for you Application, we will use <em>TodoApp</em> for this example, press <em>OK</em> (you may add an <a href="/docs/what-is-an-authorization">Authorization</a> but we will skip this in the quickstart).
 <img src="/img/create-app.png" width="550" /></p>
 <blockquote>
   <p><strong>Warning</strong><br />
-A deployed application or a resource with no authorization will be publicly accessible on the internet. Remember to undeploy if you go live with your example application. Read more about <a href="/docs/what-is-an-authorization">Authorization</a>*</p>
+A deployed application or a resource with no authorization will be publicly accessible on the internet. Remember to undeploy if you go live with your example application. Read more about <a href="/docs/what-is-an-authorization">Authorization</a></p>
 </blockquote>
 
 <p><strong>3.</strong> You should now see your new Application in the table. Click it! 
 <img src="/img/created-app.png" width="550" /></p>
 
-<p><strong>4.</strong> Now you have entered the view of your Application “TodoApp”. The first time you enter the application’s view a message is shown since you have not created any resources in your app. A resource can be seen as an object in your application and defines the structure of your data for that object. You will learn more about this in the <em><a href="/docs/resources">Resource</a></em> section.
+<p><strong>4.</strong> Now you have entered the view of your Application TodoApp. The first time you enter the application’s view a message is shown since you have not created any resources in your app. A resource can be seen as an object in your application and defines the structure of your data for that object. You will learn more about this in the <em><a href="/docs/resources">Resource</a></em> section.
 <img src="/img/app-without-resources.png" width="550" /></p>
 
 <p><strong>5.</strong> Create a <a href="/docs/resources">Resource</a> by clicking the blue round button in your right bottom corner. Give it the name <em>Todo</em>.
@@ -331,10 +331,10 @@ A deployed application or a resource with no authorization will be publicly acce
 <img src="/img/both-attributes-created.png" width="450" /></p>
 <blockquote>
   <p><strong>Note:</strong>
-All resources always have an id attribute and is added by default. This id identifies a specific resource entitiy you have saved. You don’t need to worry about setting values for id, this is handled by OOPSIE when you save entities/objects in your application.</p>
+All resources always have an id attribute and is added by default. This id identifies a specific resource entity you have saved. You don’t need to worry about setting values for id, this is handled by OOPSIE when you save entities/objects in your application.</p>
 </blockquote>
 
-<p><strong>7.</strong> Your application is done! What we need to do now is create a release of it so we are able to deploy it to a Site. Click the “Release” button on the top right corner and then click “Create Release” enter “1.0” ( You may give a description if you’d like ).
+<p><strong>7.</strong> Your application is done! What we need to do now is create a release of it so we are able to deploy it to a Site. Click the “Release” button on the top right corner and then click “Create Release” enter “1.0”, you may give a description if you like.
 <img src="/img/create-release-dialog.png" width="650" /></p>
 
 <p>When you create your first release of an application you get the option to navigate to the Sites view, do this.</p>
@@ -358,7 +358,7 @@ All resources always have an id attribute and is added by default. This id ident
 
 <p><strong>4.</strong> We will start by adding a Production Site and a Origin (safetynet so other sites can’t use your Site in a browser directly). You will find these settings in the <em>General Settings</em> panel. Use <em>Free</em> since that one you can use at no charge, it will be <em>Limited</em> pretty hard and should not be used in production. Click the pen button in the “General Settings” panel. For the Origin option just enter a the star character “*”.</p>
 
-<p><strong>5.</strong> Last thing to do before we may deploy our Site is to add at least one Application, good thing we have one! You do this in the <em>Applications</em> panel.</p>
+<p><strong>5.</strong> Last thing to do before we may deploy our Site is to add at least one Application, we add the TodoApp. You do this in the <em>Applications</em> panel.</p>
 
 <p><img src="/img/add-app-to-site.png" width="550" /></p>
 
@@ -372,11 +372,11 @@ All resources always have an id attribute and is added by default. This id ident
 
 <p>If you have followed all the previous steps you should now have a deployed Site, ready to be used. Last thing to do is storing some todos and getting them.</p>
 
-<p>There are alot of different ways to use your Site, either through a REST Api or by using one of our SDKs for Javascript, Java, etc.</p>
+<p>There are a lot of different ways to use your Site, either through a REST Api or by using one of our SDKs for JavaScript, Java, etc.</p>
 
-<p>In this guide we will test our Site by using the REST Api because this we can do directly from Oopsie dashboard. If you look at your tabs in the Site view you will see there is a tab called <em>Usage</em>, click on it.</p>
+<p>In this guide we will test our Site by using the REST Api because this we can do directly from OOPSIE dashboard. If you look at your tabs in the Site view you will see there is a tab called <em>Usage</em>, click on it.</p>
 
-<p>Here you can see an autogenerated swagger documentation of your site and it’s even possible to test it by clicking the button <em>try-it-out</em> per endpoint.</p>
+<p>Here you can see an auto generated swagger documentation of your site and it’s even possible to test it by clicking the button <em>try-it-out</em> per endpoint.</p>
 
 <p><img src="/img/site-usage.png" width="650" /></p>
 
@@ -386,7 +386,7 @@ All resources always have an id attribute and is added by default. This id ident
 
 <p><img src="/img/site-usage-get.png" width="650" /></p>
 
-<p>If you now press <em>try-it-out</em>, you can test to retrieve your Todos.</p>
+<p>If you now press <em>try-it-out</em>, you can test to retrieve your TODOs.</p>
 
 <p><img src="/img/site-usage-get-try-it-out.png" width="650" /></p>
 
@@ -396,7 +396,7 @@ All resources always have an id attribute and is added by default. This id ident
 
 <h3 id="done">Done</h3>
 
-<p>Hope you enjoyed this Quickstart, if you have any feedback or would like other tutorials, feel free to contact us or create a pull request to this repository ( button right below will guide you to it ).</p>
+<p>Hope you enjoyed this quick start, if you have any feedback or would like other tutorials, feel free to contact us or create a pull request to this repository ( button right below will guide you to it ).</p>
 </div>
             <p class="text-center">
               <br />

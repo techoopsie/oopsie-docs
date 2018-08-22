@@ -3,6 +3,11 @@ title: Java SDK
 permalink: /docs/java-sdk/
 ---
 
+### GitHub
+
+```
+ git clone https://github.com/techoopsie/oopsie-sdk-java.git
+```
 
 ### Install
 
@@ -11,7 +16,7 @@ permalink: /docs/java-sdk/
 	<dependency>
 		<groupId>io.oopsie</groupId>
   		<artifactId>oopsie-sdk-java</artifactId>
-  		<version>1.0-RC5</version>
+  		<version>1.0</version>
 	</dependency>
 ``` 
 <br>

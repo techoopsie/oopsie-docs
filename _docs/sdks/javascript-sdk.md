@@ -3,7 +3,13 @@ title: Javascript SDK
 permalink: /docs/javascript-sdk/
 ---
 
-## Install
+### GitHub
+
+```
+ git clone https://github.com/techoopsie/oopsie-sdk-js.git
+```
+
+### Install
 ------ 
 
 #### npm

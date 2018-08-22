@@ -7,8 +7,6 @@ All *[Resources](/docs/resources)* have an authorization config attached to them
 
 With *[Authorization Models](/docs/what-is-auth)* you can create specific *Authorizations* with different default *Permissions*. Below is a screenshot of how the above example could look like when configured on a resource called *Customers*.
 
-<img src="/img/res-auth-tab.png" width="350">
-
 Let us explain what we see here:
 
 With the swipe button you turn on and off the authorization of the resource. Default is on since with autorization off the resource will be fully open to anyone on the internet. So, be careful with this setting.
