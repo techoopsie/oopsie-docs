@@ -23,9 +23,9 @@
 <meta property="og:url" content="http://localhost:4000/docs/javascript-sdk/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-22T14:17:44+02:00" />
+<meta property="article:published_time" content="2018-08-22T14:44:52+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Javascript SDK","datePublished":"2018-08-22T14:17:44+02:00","dateModified":"2018-08-22T14:17:44+02:00","description":"GitHub","url":"http://localhost:4000/docs/javascript-sdk/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Javascript SDK","datePublished":"2018-08-22T14:44:52+02:00","dateModified":"2018-08-22T14:44:52+02:00","description":"GitHub","url":"http://localhost:4000/docs/javascript-sdk/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -292,15 +292,6 @@
 </code></pre>
 </div>
 
-<h4 id="or-a-specific-version">Or a specific version</h4>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@&lt;version&gt;/dist/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-<span class="c">&lt;!-- For example --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@0.0.6/dist/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-</div>
-
 <h1 id="example">Example</h1>
 
 <h3 id="initialization">Initialization</h3>
@@ -323,14 +314,39 @@
 
 <h3 id="get-entities">Get entities</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">execute</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'We got an error when getting entities'</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">({}).</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'myView'</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">nextPage</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">prevPage</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">();</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">hasPrevPage</span><span class="p">();</span>
+    <span class="c1">// Else we have our result</span>
+<span class="p">}));</span>
+
+<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">eid</span><span class="p">:</span> <span class="s1">'f89028c3-7d02-4ce8-8bd4-1d88b51aa461'</span>
+<span class="p">};</span>
+<span class="c1">// Gets data from primary view of the resource</span>
+<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+
+<span class="c1">// To get data in for a specific view.</span>
+<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+
+<span class="c1">// If you want to change the limit, defaults to 100. Can be 0 to 1000.</span>
+<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+
+<span class="c1">// You can also add all of the methods after get() in different order and use the ones you need.</span>
+<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+
+<span class="c1">// You can also store the query to later get nextPage or previous page, if they exists.</span>
+<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">query</span><span class="p">.</span><span class="nx">nextPage</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">hasPrevPage</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">query</span><span class="p">.</span><span class="nx">prevPage</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
@@ -368,10 +384,28 @@ but you create data in your backend where you use another Api key with read perm
 </code></pre>
 </div>
 
+<h1 id="api-key-1">Api key</h1>
+
+<p>If you are using auth on your Site, you can create Api Keys to protect your data.
+You can use it in the JS SDK as below, but be carefull, you shouldn’t do this in the frontend.
+If you do put it in the frontend, be sure it’s not any secret data you want to protect.
+For example, you may put a read only Api Key in the frontend because you want anyone to be able to read your data, 
+but you create data in your backend where you use another Api key with read permissions.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">oopsie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OopsieSite</span><span class="p">(</span><span class="nx">apiEndpoint</span><span class="p">,</span> <span class="nx">siteId</span><span class="p">,</span> <span class="nx">customerId</span><span class="p">);</span>
+<span class="nx">oopsie</span><span class="p">.</span><span class="nx">init</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    
+    <span class="c1">// We are done loading meta data...</span>
+    <span class="c1">// Now we can use oopsie to create, get, save, delete entities.</span>
+    <span class="kd">var</span> <span class="nx">apiKey</span> <span class="o">=</span> <span class="s1">'api-key-from-dashboard'</span><span class="p">;</span> 
+    <span class="nx">oopsie</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
 <h1 id="handle-users">Handle Users</h1>
 
 <p>If you have auth enabled on your site you can manage Users via the SDK.</p>
-
 <h3 id="register-user">Register user</h3>
 
 <p>To let Users register via the SDK you need to set this up in the Dashboard for your site. By default no Roles are allowed to register via the API and only the Admin for the Site can add Users in the Dashboard.</p>
@@ -425,6 +459,27 @@ but you create data in your backend where you use another Api key with read perm
 
 <p>Oopsie SDK follows nodejs callback pattern so you can use bluebird to promisefy the functions if you rather use promises then callbacks.</p>
 
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">oopsie</span><span class="p">.</span><span class="nx">me</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">me</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Something went wrong!</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// We can inspect the logged in user, email etc.</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="promises-1">Promises</h1>
+
+<p>Oopsie SDK follows nodejs callback pattern so you can use bluebird to promisefy the functions if you rather use promises then callbacks.</p>
+
+<h1 id="examples">Examples</h1>
+
+<p>Examples can be found in the <em>examples</em> folder. Each example will be in a subfolder and include everything needed to run the example. They need a working Oopsie site to run, and we will most likely provide them for you, but you can also create your own Site in the sandbox and try the examples against your own Site.</p>
+
+<p><strong>NOTE: the examples are meant to give you a better understanding of how you can use Oopsie to store your data and handle your Users, they are not meant to be a beauty for the eye ;)</strong></p>
+
+<p><strong>If you can’t stand the awesome design of the examples, feel free to give us a pull request</strong></p>
 </div>
             <p class="text-center">
               <br />

@@ -59,16 +59,14 @@ myResource.get().execute((err, res) => {
 let params = {
     eid: 'f89028c3-7d02-4ce8-8bd4-1d88b51aa461'
 };
+// Gets data from primary view of the resource
 myResource.get().withParams(params).execute(cb);
 
-// To get data in a View you can specify which View to use.
+// To get data in for a specific view.
 myResource.get().byView('MyView').withParams(params).execute(cb);
 
 // If you want to change the limit, defaults to 100. Can be 0 to 1000.
 myResource.get().limit(100).execute(cb);
-
-// When relations exists you can expand them
-myResource.get().expandRelations().execute(cb);
 
 // You can also add all of the methods after get() in different order and use the ones you need.
 myResource.get().withParams(params).byView('MyView').limit(100).expandRelations().execute(cb);
@@ -83,17 +81,6 @@ if(query.hasPrevPage()) {
     query.prevPage(cb);
 }
 ``` 
-
-#### Create
-bookResource.get().withParams({}).limit(100).execute(callback);
-bookResource.get().withParams({}).limit(100).expandRelations().execute(callback);
-
-var query = bookResource.get({}).byView('myView').limit(100).expandRelations().execute(callback);
-query.nextPage(callback);
-query.prevPage(callback);
-query.hasNextPage();
-query.hasPrevPage();
-```
 
 ### Create entity
 ```js
