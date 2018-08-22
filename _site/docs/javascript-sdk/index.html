@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Javascript SDK</title>
-    <meta name="description" content="Install">
+    <meta name="description" content="GitHub">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -17,15 +17,15 @@
 <title>Javascript SDK | Oopsie Doc</title>
 <meta property="og:title" content="Javascript SDK" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Install" />
-<meta property="og:description" content="Install" />
+<meta name="description" content="GitHub" />
+<meta property="og:description" content="GitHub" />
 <link rel="canonical" href="http://localhost:4000/docs/javascript-sdk/" />
 <meta property="og:url" content="http://localhost:4000/docs/javascript-sdk/" />
 <meta property="og:site_name" content="Oopsie Doc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-11-04T19:02:05+01:00" />
+<meta property="article:published_time" content="2018-08-22T14:17:44+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Javascript SDK","datePublished":"2017-11-04T19:02:05+01:00","dateModified":"2017-11-04T19:02:05+01:00","description":"Install","url":"http://localhost:4000/docs/javascript-sdk/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Javascript SDK","datePublished":"2018-08-22T14:17:44+02:00","dateModified":"2018-08-22T14:17:44+02:00","description":"GitHub","url":"http://localhost:4000/docs/javascript-sdk/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -271,189 +271,160 @@
 
         <div class="col-md-8">
             <h1>Javascript SDK</h1>
-            <div id="markdown-content-container"><h2 id="install">Install</h2>
+            <div id="markdown-content-container"><h3 id="github">GitHub</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> git clone https://github.com/techoopsie/oopsie-sdk-js.git
+</code></pre>
+</div>
+
+<h3 id="install">Install</h3>
 <hr />
 
 <h4 id="npm">npm</h4>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install oopsie-sdk
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install @techoopsie/oopsie
 </code></pre>
 </div>
 
-<h4 id="cdn">CDN</h4>
+<h4 id="script-tag">Script tag</h4>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/oopsie/libs/oopsie-sdk/0.99.0/js/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@techoopsie/oopsie/dist/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 </div>
 
-<h2 id="usage">Usage</h2>
+<h4 id="or-a-specific-version">Or a specific version</h4>
 
-<h4 id="initialization-and-basics">Initialization and basics</h4>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@&lt;version&gt;/dist/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">oopsie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OopsieSite</span><span class="p">(</span><span class="nx">prodApiUrl</span><span class="p">,</span> <span class="nx">siteId</span><span class="p">,</span> <span class="nx">customerId</span><span class="p">);</span>
-<span class="nx">oopsie</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// We have initialized oopsie sdk...</span>
+<span class="c">&lt;!-- For example --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@techoopsie/oopsie@0.0.6/dist/oopsie.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="example">Example</h1>
+
+<h3 id="initialization">Initialization</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">oopsie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OopsieSite</span><span class="p">(</span><span class="nx">apiEndpoint</span><span class="p">,</span> <span class="nx">siteId</span><span class="p">,</span> <span class="nx">customerId</span><span class="p">);</span>
+<span class="nx">oopsie</span><span class="p">.</span><span class="nx">init</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    
+    <span class="c1">// We are done loading meta data...</span>
+    <span class="c1">// Now we can use oopsie to create, get, save, delete entities.</span>
 <span class="p">});</span>
 </code></pre>
 </div>
 
-<p>After the initialization you can start to Create, Get, Delete and Update your entities. You can also Register, Login, Logout and Refresh Users.
-The SDK works in the same way as you model and Deploy your Site. You will initialize the SDK for a specific Site to get the Application you want to work with and choose a Resource on it. The Resource object is where you will make all your queries to retrieve and create entities for the specified Resource.</p>
+<h3 id="chooce-application-and-resource">Chooce Application and Resource</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// First you need to get one of your Applications that you have deployed to your site.</span>
-<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">oopsie</span><span class="p">.</span><span class="nx">getApp</span><span class="p">(</span><span class="s1">'MyApp'</span><span class="p">);</span>
-
-<span class="c1">// On this object you can then retrieve the different Resources you have.</span>
-<span class="c1">// It is this object that you use to create, get, update and delete entities on your Resource.</span>
-<span class="kd">var</span> <span class="nx">myResource</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getResource</span><span class="p">(</span><span class="s1">'MyResource'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">oopsie</span><span class="p">.</span><span class="nx">getApp</span><span class="p">(</span><span class="s1">'BookApp'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bookResource</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getResource</span><span class="p">(</span><span class="s1">'Book'</span><span class="p">);</span>
 </code></pre>
 </div>
 
-<h4 id="get">Get</h4>
+<h3 id="get-entities">Get entities</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">execute</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">bookResource</span><span class="p">.</span><span class="nx">get</span><span class="p">({}).</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'myView'</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="nx">query</span><span class="p">.</span><span class="nx">nextPage</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="nx">query</span><span class="p">.</span><span class="nx">prevPage</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="nx">query</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">();</span>
+<span class="nx">query</span><span class="p">.</span><span class="nx">hasPrevPage</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<h3 id="create-entity">Create entity</h3>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">bookResource</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">execute</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+</code></pre>
+</div>
+
+<h3 id="update-entity">Update entity</h3>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">bookResource</span><span class="p">.</span><span class="nx">save</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">execute</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+</code></pre>
+</div>
+
+<h3 id="delete-entity">Delete entity</h3>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">bookResource</span><span class="p">.</span><span class="k">delete</span><span class="p">().</span><span class="nx">withParams</span><span class="p">({}).</span><span class="nx">execute</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+</code></pre>
+</div>
+
+<h1 id="api-key">Api key</h1>
+
+<p>If you are using auth on your Site, you can create Api Keys to protect your data.
+You can use it in the JS SDK as below, but be carefull, you shouldn’t do this in the frontend.
+If you do put it in the frontend, be sure it’s not any secret data you want to protect.
+For example, you may put a read only Api Key in the frontend because you want anyone to be able to read your data, 
+but you create data in your backend where you use another Api key with read permissions.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">oopsie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OopsieSite</span><span class="p">(</span><span class="nx">apiEndpoint</span><span class="p">,</span> <span class="nx">siteId</span><span class="p">,</span> <span class="nx">customerId</span><span class="p">);</span>
+<span class="nx">oopsie</span><span class="p">.</span><span class="nx">init</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    
+    <span class="c1">// We are done loading meta data...</span>
+    <span class="c1">// Now we can use oopsie to create, get, save, delete entities.</span>
+    <span class="kd">var</span> <span class="nx">apiKey</span> <span class="o">=</span> <span class="s1">'api-key-from-dashboard'</span><span class="p">;</span> 
+    <span class="nx">oopsie</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="handle-users">Handle Users</h1>
+
+<p>If you have auth enabled on your site you can manage Users via the SDK.</p>
+
+<h3 id="register-user">Register user</h3>
+
+<p>To let Users register via the SDK you need to set this up in the Dashboard for your site. By default no Roles are allowed to register via the API and only the Admin for the Site can add Users in the Dashboard.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'my@email.com'</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="s1">'my-super-secret'</span><span class="p">,</span>
+    <span class="na">firstname</span><span class="p">:</span> <span class="s1">'Anja'</span><span class="p">,</span>
+    <span class="na">lastname</span><span class="p">:</span> <span class="s1">'Hrabun'</span>
+<span class="p">};</span>
+<span class="nx">oopsie</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">'We got an error when getting entities'</span><span class="p">);</span>
+        <span class="c1">// We failed to register user.</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-
-    <span class="c1">// Else we have our result</span>
-<span class="p">}));</span>
-
-<span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">eid</span><span class="p">:</span> <span class="s1">'f89028c3-7d02-4ce8-8bd4-1d88b51aa461'</span>
-<span class="p">};</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-
-<span class="c1">// You can also add all of the methods after get() in different order and use the ones you need.</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">expandRelations</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-
-<span class="c1">// You can also store the query to later get nextPage or previous page, if they exists.</span>
-<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">myResource</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">byView</span><span class="p">(</span><span class="s1">'MyView'</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">())</span> <span class="p">{</span>
-    <span class="nx">query</span><span class="p">.</span><span class="nx">nextPage</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">hasPrevPage</span><span class="p">())</span> <span class="p">{</span>
-    <span class="nx">query</span><span class="p">.</span><span class="nx">prevPage</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="p">}</span>
+    <span class="c1">// User registered.</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
-<h4 id="create">Create</h4>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Smith'</span><span class="p">,</span>
-    <span class="na">age</span><span class="p">:</span> <span class="mi">22</span>
-<span class="p">};</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">create</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h4 id="update">Update</h4>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Smith'</span><span class="p">,</span>
-    <span class="na">age</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-    <span class="c1">// Save will need to have eid and all Partition Keys and Clustering Keys.</span>
-    <span class="na">eid</span><span class="p">:</span> <span class="s1">'f89028c3-7d02-4ce8-8bd4-1d88b51aa461'</span> 
-<span class="p">};</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">save</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="nx">save</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h4 id="delete">Delete</h4>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Smith'</span><span class="p">,</span>
-    <span class="na">age</span><span class="p">:</span> <span class="mi">22</span>
-<span class="p">};</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="k">delete</span><span class="p">().</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-<span class="nx">myResource</span><span class="p">.</span><span class="k">delete</span><span class="p">().</span><span class="nx">withParams</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">execute</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h2 id="users">Users</h2>
-
-<p>The Javascript SDK can also help you manage Users for your site.</p>
-
-<h4 id="login">Login</h4>
-
+<h3 id="login-user">Login user</h3>
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">email</span><span class="p">:</span> <span class="s1">'my@email.com'</span><span class="p">,</span>
     <span class="na">password</span><span class="p">:</span> <span class="s1">'my-super-secret'</span>
 <span class="p">};</span>
 <span class="nx">oopsie</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// We are not logged in!</span>
+        <span class="c1">// We failed to login.</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1">// We are logged in!</span>
-<span class="p">});</span>
+    <span class="c1">// User logged in.</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
-<h4 id="register">Register</h4>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="s1">'my@email.com'</span><span class="p">,</span> 
-    <span class="na">password</span><span class="p">:</span> <span class="s1">'my-super-secret'</span><span class="p">,</span> 
-    <span class="na">auths</span><span class="p">:[</span><span class="s1">'User'</span><span class="p">],</span>
-    <span class="na">firstname</span><span class="p">:</span> <span class="s1">'Andreas'</span><span class="p">,</span>
-    <span class="na">lastname</span><span class="p">:</span> <span class="s1">'Andersson'</span>
-<span class="p">};</span>
-
-<span class="nx">oopsie</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// We are not logged in!</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// We are logged in!</span>
-<span class="p">});</span>
-</code></pre>
-</div>
-
-<h4 id="logout">Logout</h4>
-
+<h3 id="logout">Logout</h3>
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">oopsie</span><span class="p">.</span><span class="nx">logout</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// We are not logged out!</span>
+        <span class="c1">// We failed to logout.</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1">// We logged out!</span>
-<span class="p">});</span>
+    <span class="c1">// User logged out.</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
-<h4 id="refresh">Refresh</h4>
+<h1 id="promises">Promises</h1>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">oopsie</span><span class="p">.</span><span class="nx">refresh</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// We didnt manage to refresh the users session.</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">// We refreshed the session for your user.</span>
-<span class="p">});</span>
-</code></pre>
-</div>
+<p>Oopsie SDK follows nodejs callback pattern so you can use bluebird to promisefy the functions if you rather use promises then callbacks.</p>
 
-<h4 id="me">Me</h4>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">oopsie</span><span class="p">.</span><span class="nx">me</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">me</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Something went wrong!</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">// We can inspect the logged in user, email etc.</span>
-<span class="p">});</span>
-</code></pre>
-</div>
 </div>
             <p class="text-center">
               <br />
@@ -545,7 +516,7 @@ The SDK works in the same way as you model and Deploy your Site. You will initia
     <div class="container">
 
         <p class="text-center">
-            Oopsie Doc 2017 |
+            Oopsie Doc 2018 |
             Powered by <a href="http://oopsie.io">Techoopsie AB</a>
         </p>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->

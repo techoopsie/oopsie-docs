@@ -5,21 +5,20 @@ permalink: /docs/quickstart/
 
 >Estimated time: 15 - 30m
 
-This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running in our Sandbox environment.
+This guide will show you how to create and deploy your first Site with OOPSIE within minutes. We will guide you step by step until you have your Site running.
 
-The result of this guide will be a deployed Site ( *TodoSite* ) that has an Application ( *TodoApp* ) with one Resource ( *Todo* ) that has two Attributes ( *name*, *done* ). We will be able to POST(create), GET(retrieve), PUT(update) and DEL(delete) Todo entities via a simple API or use one of our SDKs (SDKs are not included in this guide yet)
+The result of this guide will be a deployed *[Site](/docs/what-is-a-site)* ( *TodoSite* ) that has an *[Application](/docs/what-is-an-application)* ( *TodoApp* ) with one *[Resource](/docs/resources)* ( *Todo* ) that has two Attributes ( *name*, *done* ). We will be able to POST(create), GET(fetch), PUT(update) and DELETE(delete) Todo entities via a simple API or use one of our SDKs.
 
-Although OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, that e.g. wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex backends instead of working on your idea?
+Although OOPSIE is created to handle a huge amount of traffic and data ( Big Data ), it also works for smaller apps as well, e.g. apps that wants to have the possibility to scale from 1 request a day to 10k requests per second. Why should you have to care about big and complex back ends instead of working on your idea?
 
-The place that all the modelling and deployment of your site takes place is in our [Dashboard](https://dashboard.oopsie.io).
+
+The place that all the modelling and deployment of your site takes place is in our [Dashboard](https://dashboard-next.oopsie.io).
 
 ### Prerequisites:
 ------
 
 - OOPSIE account ( Don't have one? Create one at [oopsie.io](https://oopsie.io/create-account))
 - Internet access ( which you obviously have? )
-
-That's it! Isn't it great!?
 
 ### Workflow to get your site up and running
 -  Create an *[Application](/docs/what-is-an-application)*
@@ -34,76 +33,55 @@ That's it! Isn't it great!?
 ------
 
 We will start by creating an [Application](/docs/what-is-an-application).
-Everything we will do will be in our [Dashboard](https://dashboard.oopsie.io), so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the [Sites](/docs/what-is-a-site) view. Just hit the menu button in the left upper corner and then follow the steps below.
+Everything we will do will be in our [Dashboard](https://dashboard-next.oopsie.io), so if you are not there yet you should navigate there in another tab. The default view in the dashboard is the [Sites](/docs/what-is-a-site) view. Just hit the menu button in the left upper corner and then follow the steps below.
 
-**1.** Navigate to Application Models View in the sidebar (highlighted item). Now you should see a *Create Application* button, press it and continue with next step below.
+**1.** Navigate to application models view by clicking "Application Models", the highlighted item in the sidebar image below.
+<img src="/img/sidebar-app.png" width="150">
 
-<img src="/img/sidebar-app.png" width="350">
-
-**2.** Fill in the name you want for you Application, we will use *TodoApp* for this example (you may add an [Authorization](/docs/what-is-an-authorization) but we will skip this in the quick start) and press *OK*.
-
+**2.** When Application Models view is loaded nothing is really shown since you don't have any apps yet. You should see a big blue round button with a plus in your right bottom corner though, click it. Fill in the name you want for you Application, we will use *TodoApp* for this example, press *OK* (you may add an [Authorization](/docs/what-is-an-authorization) but we will skip this in the quickstart).
 <img src="/img/create-app.png" width="550">
+> **Warning**<br>
+> A deployed application or a resource with no authorization will be publicly accessible on the internet. Remember to undeploy if you go live with your example application. Read more about [Authorization](/docs/what-is-an-authorization)
 
-**3.** You should now see your new Application in the table. Click it! Hopefully you don't get too scared when you enter your new Application ( It's not too much there YET )
-
+**3.** You should now see your new Application in the table. Click it! 
 <img src="/img/created-app.png" width="550">
 
-**4.** Take a look at the top tabs, you should see *Resources*, *Application* and *Docs*.
-
-   - Resources - this is where you model your different [Resources](/docs/resources) in your Application.
-   - Application - Here you have general things about your Application, like change the name or create a release.
-   - Docs - If you would like to see what your endpoints will look like on your site, this is where to look. It's a generated Swagger documentation for you.
-
+**4.** Now you have entered the view of your Application TodoApp. The first time you enter the application's view a message is shown since you have not created any resources in your app. A resource can be seen as an object in your application and defines the structure of your data for that object. You will learn more about this in the *[Resource](/docs/resources)* section.
 <img src="/img/app-without-resources.png" width="550">
 
-**5.** We probably don't want to change the name of our Application ( yet ), so we will start by creating a [Resource](/docs/resources). Give it the name *Todo*.
-
+**5.** Create a [Resource](/docs/resources) by clicking the blue round button in your right bottom corner. Give it the name *Todo*.
 <img src="/img/create-resource.png" width="550">
 
-**6.** Now that we have a resource we can actually start the real modelling, the Attributes. As stated in the beginning of this quick start we will have two Attributes, one called *name* of type *Text* and one called *done* that is of type *Boolean*. For each attribute you need to mark it as done using the check button. When you are done press the save button in the upper right corner of the [Resource](/docs/resources)
+**6.** Now that we have a resource we can actually start the real modeling, adding the [Attributes](/docs/attributes). As stated in the beginning of this quickstart we will have two Attributes, one called *name* of type *Text* and one called *done* that is of type *Boolean*. Click the "pen" button and then click "Add Attribute" for each of them. When done click the save button.
+<img src="/img/both-attributes-created.png" width="450">
+   >**Note:**
+   >All resources always have an id attribute and is added by default. This id identifies a specific resource entity you have saved. You don't need to worry about setting values for id, this is handled by OOPSIE when you save entities/objects in your application.
 
-   >**Note:** You probably wonder what all these *Partition Key*, *Cluster Key*, etc. are but we will not worry about that now. You can read more about it later.
+**7.** Your application is done! What we need to do now is create a release of it so we are able to deploy it to a Site. Click the "Release" button on the top right corner and then click "Create Release" enter "1.0", you may give a description if you like.
+<img src="/img/create-release-dialog.png" width="650">
 
-<img src="/img/both-attributes-created.png" width="550">
-
-**7.** Your application is done! Gob job! What we need to do now is create a release of it, to deploy it to a Site.
-
-   Navigate to the *Application* tab and *Create a release* called 1.0 ( You may give a description if you'd like ).
-
-<img src="/img/create-release-3.png" width="550">
-
-<img src="/img/create-release-dialog.png" width="550">
-
-<img src="/img/release-created.png" width="550">
+When you create your first release of an application you get the option to navigate to the Sites view, do this.
 
 By now you should have an Application called *TodoApp* with a Resource by name *Todo* that has 2 Attributes, *name* and *done* and your first release 1.0.
 
 ### Create your first Site
 ------
 
-With sites you choose which applications you want to deploy and all applications in a site share the same base URL and other configurations such as security and authorization. An application model can be used in several sites.
+With sites you choose which applications you want to deploy and all applications in a site share the same access point (url) and other configurations such as security and authorization. An application model can be used in several sites.
 
-**1.** Navigate to Site from the sidebar.
+**1.** Navigate to Site from the sidebar if you are not already there.
 
-<img src="/img/site-sidebar.png" width="550">
-
-**2.** Create your site, *TodoSite*
+**2.** Create your site by clicking the blue round button and name it *TodoSite*
 
 <img src="/img/create-site.png" width="550">
 
-<img src="/img/site-created.png" width="550">
-
-**3.** When you enter the site view you will see something like this. As you can see you may not deploy the site yet because you need to have at least one Application and a Production site (the OOPSIE cloud to deploy too).
+**3.** Enter your site by clicking the row with your site, you might need to click the save button first. You can not deploy the site yet because you need to have at least one Application and a Production site (the OOPSIE cloud to deploy too).
 
 <img src="/img/entered-site.png" width="650">
 
-**4.** We will start by adding a Production Site and a Origin (safety net so other sites can't use your Site in a browser directly). You will find these settings in the *General Settings* panel. Use *Sandbox* since that one is for free, it will be *Rate Limited* pretty hard and should not be used in production.
+**4.** We will start by adding a Production Site and a Origin (safetynet so other sites can't use your Site in a browser directly). You will find these settings in the *General Settings* panel. Use *Free* since that one you can use at no charge, it will be *Limited* pretty hard and should not be used in production. Click the pen button in the "General Settings" panel. For the Origin option just enter a the star character "*".
 
-<img src="/img/general-settings.png" width="550">
-
-   When you have filled it in you save by pressing the check button at the top of the panel.
-
-**5.** Last thing to do before we may deploy our Site is to add at least one Application, good thing we have one! You do this in the *Applications* panel.
+**5.** Last thing to do before we may deploy our Site is to add at least one Application, we add the TodoApp. You do this in the *Applications* panel.
 
 <img src="/img/add-app-to-site.png" width="550">
 
@@ -111,7 +89,7 @@ With sites you choose which applications you want to deploy and all applications
 
 <img src="/img/site-ready-to-deploy.png" width="650">
 
-**7.** By now your Site should be deployed, but your Application is not active, active it by clicking activate.
+**7.** By now your Site should be deployed, but your Application is not active, activate it by clicking activate. Click application row to expand it if you can't see the "Activate" button.
 
 ### Test your Site
 
